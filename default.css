@@ -1,0 +1,40 @@
+body {
+	margin: auto;
+	max-width: 80vh;
+	font-size: 20px;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+nav header * {
+	margin: 0;
+}
+
+nav header h1 { font-size: 2em; font-weight: 100; }
+nav header h2 { font-size: 1.2em; font-weight: 100; }
+
+nav div a {
+	margin-right: 2em;
+	font-size: 1.2em;
+	color: black;
+	text-decoration: none;
+}
+
+nav div a:hover {
+	text-decoration: underline;
+}
+
+nav div a:last-child {
+	margin-right: 0;
+}
+
+.airtable-embed {
+	background: transparent;
+	min-height: 80vh;
+}
