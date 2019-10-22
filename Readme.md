@@ -1,2 +1,3 @@
-# Livis.no
+# Mittatelier.no
 
+Laget av Eirik L. Bredland
