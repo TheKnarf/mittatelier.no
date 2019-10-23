@@ -14,4 +14,4 @@ Laget av Eirik L. Bredland
 
 1. start terminalvindu
 2. npm run deploy
-3. brnavn/passord
+3. (brnavn/passord hvis nødv)
