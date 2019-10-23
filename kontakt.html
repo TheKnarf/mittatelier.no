@@ -7,74 +7,9 @@
   <meta name="keywords" content="Galleri,Atelier,Malerier,Kunst,Oljemaleri,Akrylbilde,Tegninger,Klepp">
   <meta name="author" content="Eirik">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
 
-body {
-  margin: 35px;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  
-}
+ <link rel="stylesheet" type="text/css" href="default.css" />
 
-.header {
-  
-  padding: 0px;
-  text-align: center;
-}
-
-#navbar {
-  overflow: hidden;
-  background-color: #5F9EA0;
-}
-
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-#navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-#navbar a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.content {
-  padding: 16px;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.sticky + .content {
-  padding-top: 60px;
-}
-
-#main {
-  
-  padding: 16px;
-  text-align: center;
-}
-
-#footer {
-  overflow: hidden;
-  background-color: #5F9EA0;
-  padding: 0px;
-  color: white;
-  text-align: center;
-}
-</style>
 </head>
 
 <body>
@@ -110,20 +45,7 @@ body {
   <p>Besøksadresse: Jærvegen 536, 4352 Kleppe</p>
 </div>
 
-<script>
-window.onscroll = function() {myFunction()};
-
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-</script>
+<script src="sticky.js"></script>
 
 </body>
 </html>
