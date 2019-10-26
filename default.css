@@ -1,29 +1,34 @@
 body {
+	/* definerer standard skriftstørrelse og -type på nettstedet */
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
+	/* sentrerer text på siden */
 	text-align: center;
 }
 
 #navbar {
+	/* setter bakgrunnsfarge på navbar */
 	background-color: #5F9EA0;
 }
 
 #navbar a {
+	/* strekker navbar over hele skjermen */
 	display: inline-block;
+	/* setter hvit tekstfarge i navbar */
 	color: #f2f2f2;
-	text-align: center;
+	/*text-align: center;*/
+	/* lager luft rundt hver link */
 	padding: 14px;
+	/* setter fontstørrelse ihht skjermbredden */
 	font-size: 2,2vw;
+	/* fjerner understrekingen av linker i navbaren */
+	text-decoration: none;
 }
 
 #navbar a:hover {
+	/* gjør at linken i navbar skifter til hvit bakgrunn og sort tekst når musepeker holdes over */
 	background-color: #ddd;
 	color: black;
-}
-
-/*#navbar a:active {
-	background-color: #4CAF50;
-	color: white;*/
 }
 
 #main {
@@ -36,8 +41,9 @@ body {
 	box-shadow: 10px 10px 10px grey;
 	/* krymper bildene til max 100% av skjermbredden */
 	max-width: 100%;
+	/* gir bilder rett aspect ratio */
 	height: auto;
-	/* midtstiller bilder på siden */
+	/* deneste tre midtstiller bilder på siden */
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -48,30 +54,47 @@ body {
 	width:600px;
 	/* krymper bildene til max 100% av skjermbredden */
 	max-width: 100%;
+	/* gir bilder rett aspect ratio */
 	height: auto;
-	/* midtstiller bilder på siden */
+	/* de tre neste midtstiller bilder på siden */
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
-
+.logo  {
+	/* setter størrelsen på logo til 700px i utgangspunktet */
+	width:700px;
+	/* krymper logoen til max 100% av skjermbredden */
+	max-width: 100%;
+	/* gir logoen rett aspect ratio */
+	height: auto;
+	/* de tre neste midtstiller logoen på siden */
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 #footer {
 	background-color: #5F9EA0;
 	color: white;
-	/*font-size: 20px;*/
+	/* setter litt mindre font for å unngå text-bryting på mobil */
 	font-size: 16px;
+	/* litt usikker på hvorfor, men denne gjør at footer blir tykkere */
 	overflow: hidden;
+	/* sentrer teksten, det sier seg vel selv... */
 	text-align: center;
-	/*padding: 0px;*/
 }  
 
 .table, td {
+	/* settes til 1px for å se layout på tabellen */
 	border: 0px solid black;
-    border-collapse: collapse;
+	/* samler cellene i tabellen */
+	border-collapse: collapse;
     margin-left: auto;
 	margin-right: auto;
 	padding: 5px ;
+	/* setter en fast størrelse på tabellen slik at den passer også på mobil */
 	width: 100px;
-	table-layout:fixed;
+	/* setter alle celler til lik størrelse */
+	table-layout: fixed;
 }
   
