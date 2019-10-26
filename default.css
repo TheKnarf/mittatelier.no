@@ -1,18 +1,10 @@
 body {
-  margin: 35px 35px;
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
-}
-
-.header {
 	text-align: center;
 }
 
 #navbar {
-	overflow: visible;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
 	background-color: #5F9EA0;
 }
 
@@ -20,9 +12,8 @@ body {
 	display: inline-block;
 	color: #f2f2f2;
 	text-align: center;
-	padding: 14px 16px;
-	/* Denne er allerede angitt i body */
-	/* font-size: 20px; */
+	padding: 14px;
+	font-size: 2,2vw;
 }
 
 #navbar a:hover {
@@ -30,25 +21,9 @@ body {
 	color: black;
 }
 
-#navbar a:active {
+/*#navbar a:active {
 	background-color: #4CAF50;
-	color: white;
-}
-
-.content {
-	padding: 14px 16px;
-}
-
-.sticky {
-	position: fixed;
-	top: 0;
-	width: 100%;
-}
-
-/* Siden denne er det samme som bare .content tror jeg ikke at den er nødvendig,
-   men må sjekke om det har noen innvirkning på mobilsider */
-.sticky + .content {
-	padding: 14px 16px;
+	color: white;*/
 }
 
 #main {
@@ -58,13 +33,45 @@ body {
 
 .bilder  {
 	/* lager skygge på bilder som er merket class="bilder" i img-taggen */
-  	box-shadow: 10px 10px 10px grey;
+	box-shadow: 10px 10px 10px grey;
+	/* krymper bildene til max 100% av skjermbredden */
+	max-width: 100%;
+	height: auto;
+	/* midtstiller bilder på siden */
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bilder0  {
+	/* setter størrelsen til 600px i utgangspunktet */
+	width:600px;
+	/* krymper bildene til max 100% av skjermbredden */
+	max-width: 100%;
+	height: auto;
+	/* midtstiller bilder på siden */
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #footer {
-	overflow: hidden;
 	background-color: #5F9EA0;
 	color: white;
+	/*font-size: 20px;*/
+	font-size: 16px;
+	overflow: hidden;
 	text-align: center;
-	font-size: 20px;
+	/*padding: 0px;*/
 }  
+
+.table, td {
+	border: 0px solid black;
+    border-collapse: collapse;
+    margin-left: auto;
+	margin-right: auto;
+	padding: 5px ;
+	width: 100px;
+	table-layout:fixed;
+}
+  
