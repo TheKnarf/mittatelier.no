@@ -51,7 +51,7 @@ body {
 
 .bilder0  {
 	/* setter størrelsen til 600px i utgangspunktet */
-	width:600px;
+	width:800px;
 	/* krymper bildene til max 100% av skjermbredden */
 	max-width: 100%;
 	/* gir bilder rett aspect ratio */
