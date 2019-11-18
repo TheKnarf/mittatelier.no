@@ -68,12 +68,12 @@ body {
 }
 	
 #skygge {
-	/* skyggeeffekt på overskriften på plakaten */
+	/* teksteffekt på overskriften på plakaten */
 	text-shadow:
 	-1px -1px 0 #000,
 	1px -1px 0 #000,
 	-1px 1px 0 #000,
-	1px 1px 0 #000;  color: #ffbb00;
+	1px 1px 0 #000;  color: #5F9EA0;
 }	
 
 .bilder  {
