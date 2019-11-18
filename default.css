@@ -9,6 +9,8 @@ body {
 #navbar {
 	/* setter bakgrunnsfarge på navbar */
 	background-color: #5F9EA0;
+	/* avrunder hjørner på navbar */
+	border-radius: 10px;
 }
 
 #navbar a {
@@ -30,11 +32,49 @@ body {
 	background-color: #ddd;
 	color: black;
 }
+#navbar a.current {
+	/* skifte farge på linken slik at den viser hvilken side som er aktiv */
+	background-color: #5F9EA0;
+	color: black;
+}
 
 #main {
+	/* lager luft rundt innholdet */
 	padding: 16px;
+	/* sentrerer tekst på siden */
 	text-align: center;
 }
+
+#plakat {
+	/* bakgrunnsbilde på 'plakaten' */
+	background-image: url("img/ark2.jpg");
+	/* forteller hvor bildet skal festes */
+	background-position: top left;
+	/* strekker ut bakgrunnnsbilde til hele plakaten */
+	background-size: cover;
+	/* luft til høyre og venstre */
+	padding: 20px;
+	/* maks størrelse på plakaten */
+	max-width: 850px;
+	/* sentrerer plakaten */
+	margin: auto;
+	/* lager kant rundt plakaten */
+	border: solid 1px black;
+	/* avrunder hjørner på plakaten */
+	border-radius: 25px;
+	/* lager skygge bak plakaten */
+	box-shadow: 10px 10px 10px grey;
+	;
+}
+	
+#skygge {
+	/* skyggeeffekt på overskriften på plakaten */
+	text-shadow:
+	-1px -1px 0 #000,
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;  color: #ffbb00;
+}	
 
 .bilder  {
 	/* lager skygge på bilder som er merket class="bilder" i img-taggen */
@@ -51,7 +91,7 @@ body {
 
 .bilder0  {
 	/* setter størrelsen til 600px i utgangspunktet */
-	width:800px;
+	width:650px;
 	/* krymper bildene til max 100% av skjermbredden */
 	max-width: 100%;
 	/* gir bilder rett aspect ratio */
@@ -74,7 +114,9 @@ body {
 	margin-right: auto;
 }
 #footer {
+	/* bakgrunnsfarge på footer */
 	background-color: #5F9EA0;
+	/* tekstfarge på footer */
 	color: white;
 	/* setter litt mindre font for å unngå text-bryting på mobil */
 	font-size: 16px;
@@ -82,8 +124,16 @@ body {
 	overflow: hidden;
 	/* sentrer teksten, det sier seg vel selv... */
 	text-align: center;
+	/* avrunder hjørner på footer */
+	border-radius: 10px;
 }  
 
+#copyright {
+	/* setter litt mindre font for å unngå text-bryting på mobil */
+	font-size: 16px;
+	/* sentrer teksten, det sier seg vel selv... */
+	text-align: center;
+}  
 .table, td {
 	/* settes til 1px for å se layout på tabellen */
 	border: 0px solid black;
@@ -91,7 +141,7 @@ body {
 	border-collapse: collapse;
     margin-left: auto;
 	margin-right: auto;
-	padding: 5px ;
+	padding: 5px;
 	/* setter en fast størrelse på tabellen slik at den passer også på mobil */
 	width: 100px;
 	/* setter alle celler til lik størrelse */
