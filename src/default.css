@@ -88,6 +88,31 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+.maps  {
+	/* lager skygge på bilder som er merket class="bilder" i img-taggen */
+	box-shadow: 10px 10px 10px grey;
+	/* krymper bildene til max 100% av skjermbredden */
+	position: relative;
+	overflow: hidden;
+	width: 800px;
+	max-width: 100%;
+	/* gir bilder rett aspect ratio */
+	height: 500px;
+	/* deneste tre midtstiller bilder på siden */
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.maps iframe {
+	/* iframe elementet skal følge størrelse og posisjonen til div-elemetet den ligger inne i */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
 
 .bilder0  {
 	/* setter størrelsen til 600px i utgangspunktet */
