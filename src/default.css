@@ -32,10 +32,12 @@ body {
 	background-color: #ddd;
 	color: black;
 }
+
 #navbar a.current {
 	/* skifte farge på linken slik at den viser hvilken side som er aktiv */
-	background-color: #5F9EA0;
 	color: black;
+	/* fjerner highlight ved hover over linken til aktiv side */
+	background-color: #5F9EA0;
 }
 
 #main {
@@ -64,7 +66,6 @@ body {
 	border-radius: 25px;
 	/* lager skygge bak plakaten */
 	box-shadow: 10px 10px 10px grey;
-	;
 }
 	
 #skygge {
@@ -76,7 +77,7 @@ body {
 	1px 1px 0 #000;  color: #5F9EA0;
 }	
 
-.bilder  {
+.bilder {
 	/* lager skygge på bilder som er merket class="bilder" i img-taggen */
 	box-shadow: 10px 10px 10px grey;
 	/* krymper bildene til max 100% av skjermbredden */
@@ -88,7 +89,8 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
-.maps  {
+
+.maps {
 	/* lager skygge på bilder som er merket class="bilder" i img-taggen */
 	box-shadow: 10px 10px 10px grey;
 	/* krymper bildene til max 100% av skjermbredden */
@@ -114,7 +116,7 @@ body {
 	border: 0;
 }
 
-.bilder0  {
+.bilder0 {
 	/* setter størrelsen til 600px i utgangspunktet */
 	width:650px;
 	/* krymper bildene til max 100% av skjermbredden */
@@ -126,7 +128,8 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
-.logo  {
+
+.logo {
 	/* setter størrelsen på logo til 700px i utgangspunktet */
 	width:700px;
 	/* krymper logoen til max 100% av skjermbredden */
@@ -138,6 +141,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+
 #footer {
 	/* bakgrunnsfarge på footer */
 	background-color: #5F9EA0;
@@ -159,6 +163,7 @@ body {
 	/* sentrer teksten, det sier seg vel selv... */
 	text-align: center;
 }  
+
 .table, td {
 	/* settes til 1px for å se layout på tabellen */
 	border: 0px solid black;
@@ -172,4 +177,3 @@ body {
 	/* setter alle celler til lik størrelse */
 	table-layout: fixed;
 }
-  
