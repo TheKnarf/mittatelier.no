@@ -90,7 +90,18 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
-
+.bilder2 {
+	/* lager skygge på bilder som er merket class="bilder" i img-taggen
+	box-shadow: 10px 10px 10px grey;*/
+	/* krymper bildene til max 100% av skjermbredden */
+	max-width: 100%;
+	/* gir bilder rett aspect ratio */
+	height: auto;
+	/* de neste tre midtstiller bilder på siden */
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 .maps {
 	/* lager skygge på bilder som er merket class="bilder" i img-taggen */
 	box-shadow: 10px 10px 10px grey;
