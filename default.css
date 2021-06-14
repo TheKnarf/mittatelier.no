@@ -7,17 +7,18 @@ body {
 }
 
 #navbar {
-	/* setter bakgrunnsfarge på navbar */
-	background-color: #5F9EA0;
+	/* setter bakgrunnsfarge på navbar 
+	background-color: #5F9EA0;*/
+	background-color: #f0e2a6;
 	/* avrunder hjørner på navbar */
-	border-radius: 10px;
+	border-radius: 0px;
 }
 
 #navbar a {
 	/* strekker navbar over hele skjermen */
 	display: inline-block;
 	/* setter hvit tekstfarge i navbar */
-	color: #f2f2f2;
+	color: black;
 	/*text-align: center;*/
 	/* lager luft rundt hver link */
 	padding: 14px;
@@ -29,15 +30,15 @@ body {
 
 #navbar a:hover {
 	/* gjør at linken i navbar skifter til hvit bakgrunn og sort tekst når musepeker holdes over */
-	background-color: #ddd;
+	background-color: white;
 	color: black;
 }
 
 #navbar a.current {
 	/* skifte farge på linken slik at den viser hvilken side som er aktiv */
-	color: black;
+	color: #9c905a;
 	/* fjerner highlight ved hover over linken til aktiv side */
-	background-color: #5F9EA0;
+	background-color:#f0e2a6;
 }
 
 #main {
@@ -63,7 +64,7 @@ body {
 	/* lager kant rundt plakaten */
 	border: solid 1px black;
 	/* avrunder hjørner på plakaten */
-	border-radius: 25px;
+	border-radius: 0px;
 	/* lager skygge bak plakaten */
 	box-shadow: 10px 10px 10px grey;
 }
@@ -84,7 +85,7 @@ body {
 	max-width: 100%;
 	/* gir bilder rett aspect ratio */
 	height: auto;
-	/* deneste tre midtstiller bilder på siden */
+	/* de neste tre midtstiller bilder på siden */
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -100,7 +101,7 @@ body {
 	max-width: 100%;
 	/* gir bilder rett aspect ratio */
 	height: 500px;
-	/* deneste tre midtstiller bilder på siden */
+	/* de neste tre midtstiller bilder på siden */
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -131,22 +132,23 @@ body {
 
 .logo {
 	/* setter størrelsen på logo til 700px i utgangspunktet */
-	width:700px;
+	width:400px;
 	/* krymper logoen til max 100% av skjermbredden */
-	max-width: 100%;
+	max-width: 60%;
 	/* gir logoen rett aspect ratio */
 	height: auto;
-	/* de tre neste midtstiller logoen på siden */
+	
+	/* de tre neste midtstiller logoen på siden*/
 	display: block;
-	margin-left: auto;
+	margin-left: 10%;
 	margin-right: auto;
 }
 
 #footer {
 	/* bakgrunnsfarge på footer */
-	background-color: #5F9EA0;
+	background-color:#f0e2a6;
 	/* tekstfarge på footer */
-	color: white;
+	color: black;
 	/* setter litt mindre font for å unngå text-bryting på mobil */
 	font-size: 16px;
 	/* litt usikker på hvorfor, men denne gjør at footer blir tykkere */
@@ -154,7 +156,7 @@ body {
 	/* sentrer teksten, det sier seg vel selv... */
 	text-align: center;
 	/* avrunder hjørner på footer */
-	border-radius: 10px;
+	border-radius: 0px;
 }  
 
 #copyright {
