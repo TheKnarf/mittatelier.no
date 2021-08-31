@@ -142,14 +142,14 @@ body {
 }
 
 .logo {
-	/* setter størrelsen på logo til 700px i utgangspunktet */
+	/* setter størrelsen på logo til 400px i utgangspunktet */
 	width:400px;
-	/* krymper logoen til max 100% av skjermbredden */
+	/* krymper logoen til max 60% av skjermbredden */
 	max-width: 60%;
 	/* gir logoen rett aspect ratio */
 	height: auto;
 	
-	/* de tre neste midtstiller logoen på siden*/
+	/* de tre neste midtstiller logoen på siden, MEN MED 10% HAR JEG ENDRET TIL Å FORSKYVE LOGO LITT TIL VENSTRE */
 	display: block;
 	margin-left: 10%;
 	margin-right: auto;
