@@ -1,8 +1,6 @@
 https://mittatelier.no/index.html
 https://mittatelier.no/bilder.html
-https://mittatelier.no/tider.html
 https://mittatelier.no/kurs.html
-https://mittatelier.no/ommittatelier.html
-https://mittatelier.no/ommeg.html
+https://mittatelier.no/om.html
 https://mittatelier.no/kontakt.html
 https://mittatelier.no

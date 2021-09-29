@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="nb_NO">
+
 <head>
   <title>Mitt Atelier</title>
   <meta charset="utf-8">
-  <meta name="description" content="Bilder">
-  <meta name="keywords" content="Mittatelier,Galleri,Atelier,Malerier,Kunst,Oljemaleri,Akrylbilde,Tegninger,Klepp">
+  <link rel="stylesheet" type="text/css" href="ny.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="ikon60.png">
+
+  <meta name="description" content="Nettsiden MittAtelier.no tilhører kunstneren Liv Grethe Bredland. Mitt Atelier er et lokalt galleri på Kleppe i Rogaland med Atelier og kunstutstilling.">
+  <meta name="keywords" content="Mittatelier,Galleri,Atelier,Malerier,Kunst,Oljemaleri,Akrylbilde,Tegninger,Klepp,Tegnekurs,Kroki,Krokitegning,Tegnekveld,kurs,Hattelandsgården,Kleppe,SolDesignArt,Kleppekrossen">
   <meta name="author" content="Liv Grethe Bredland">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta property="og:title" content="Mitt Atelier" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="http://mittatelier.no/" />
@@ -14,158 +19,140 @@
   <meta property="og:image" content="http://mittatelier.no/img/logo2.jpg" />
   <meta property="og:locale" content="nb_NO" />
   <meta property="og:site_name" content="Mitt Atelier" />
- <link rel="stylesheet" type="text/css" href="default.css" />
- <link rel="shortcut icon" type="image/x-icon" href="ikon60.png">
 </head>
 
 <body>
 
-<div class="header">
-  <img src="img/logo2.jpg" alt="Mitt Atelier sin logo" class="logo">
-</div>
+  <div id="wrapper">
 
-<div id="navbar">
-  <p>
-  <a href="index.html">HJEM</a>
-  <a href="bilder.html" class="current">BILDER</a>
-  <a href="tider.html">ÅPNINGSTIDER</a>
-  <a href="kurs.html" style="display: none;">KURS</a>
-  <a href="ommittatelier.html">OM MITT ATELIER</a>
-  <a href="ommeg.html">OM MEG</a>
-  <a href="kontakt.html">KONTAKT</a>
-    </p>
-</div>
+    <nav id="meny">
+      <div id="meny_lukket"><a href="#meny_aapen"><img src="img/aapnemeny.png"></a></div>
+      <div id="meny_aapen"><a href="#meny_lukket"><img src="img/lukkmeny.png"></a>
+        <ul class="flex">
+          <li><a href="index.html">Hjem</a></li>
+          <li><a href="bilder.html">Bilder</a></li>
+          <!--li><a href="kurs.html">Kurs</a></li-->
+          <li><a href="om.html">Om</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </nav>
 
-<div id="main">
-  <p>Her finner du noen av mine bilder.<br>
-    <br>Jeg sender over hele landet.<br><br>
-     Det er alltid et større utvalg i Mitt Atelier på Kleppe, samt på min Instagram.<br>
-  </p>
-  <p>Instagram <a href="http://www.instagram.com/mittatelier">
-    <img src="img/insta.png" alt="Instagram logo" style="text-decoration:none;width:42px;height:42px;border:0;"></a>
-  mittatelier</p>
+    <header>
+      <img src="img/logo2_gjennomsiktig.svg" alt="Mitt Atelier sin logo">
+    </header>
 
-  <img src="img/trost.jpg" alt="Bilde med tittel: Trøst" class="bilder" style="width:375px; height:auto;">
-  <p>"Trøst"
-     <br>
-    <br>50 x 70 cm
-    <br>Akryl på lerret (deep edge canvas)
-    <br>Pris kr. 3600,-
-    <br>
-    <br>
-  </p>
+    <main style="background-color:rgb(228, 178, 135)">
+      <article>
+        <p>Her finner du noen av mine bilder.
+        <br>Jeg sender over hele landet.
+        <br>Ved omsetning av kunst med salgspris over kr. 2.000,- skal det betales 5% kunstavgift.<br>Kunstavgiften er inkludert i prisen på alle mine bilder.</p>
+        <p>Det er alltid et større utvalg i Mitt Atelier på Kleppe, samt på min Instagram <a href="http://www.instagram.com/mittatelier" target="_blank"><img src="img/insta.png" alt="Instagram logo" style="text-decoration:none;width:42px;height:42px;border:0;"></a> mittatelier.</p>
+      </article>
+    </main>
 
-<img src="img/haap.jpg" alt="Bilde med tittel: Håp" class="bilder" style="width:600px; height:auto;">
-<p>"Håp"
-   <br>
-  <br>80 x 80 cm
-  <br>Olje på lerret
-  <br>Pris kr. 5100,-
-  <br>
-  <br>
-</p>
-  
-<img src="img/strommer.jpg" alt="Bilde med tittel: Strømmer av nåde" class="bilder" style="width:600px; height:auto;">
-<p>"Strømmer av nåde"
-  <br>
-  <br>80 x 80 cm
-  <br>Olje på lerret
-  <br>Pris kr. 5100,-
-  <br>
-  <br>
-</p>
+    <main id="galleriet">
+       
+      <div style="width:100%; padding:15px;">
+        <h2>Olje på lerret</h2>
+      </div>
+      
+      <div class="gallery">
+        <a target="_blank" href="img/haap.jpg"><img src="img/haap.jpg" alt="Håp" width="400px"></a>
+        <div class="desc">"Håp"<br>80 x 80 cm<br>Olje på lerret<br>Pris kr. 5100,-</div>
+      </div>
 
-<img src="img/tilgivelse.jpg" alt="Bilde med tittel: Tilgivelse" class="bilder" style="width:600px; height:auto;">
-<p>"Tilgivelse"
-  <br>
-  <br>80 x 80 cm
-  <br>Olje på lerret
-  <br>Solgt
-  <br>
-  <br>
-</p>
-  
-<img src="img/howclose.jpg" alt="Bilde med tittel: How Close" class="bilder" style="width:600px; height:auto;">
-<p>"How Close"
-  <br>
-  <br>80 x 80 cm
-  <br>Olje på lerret
-  <br>Pris kr. 5100,-
-  <br>
-  <br>
-</p>
+      <div class="gallery">
+        <a target="_blank" href="img/strommer.jpg"><img src="img/strommer.jpg" alt="Strømmer av nåde" width="400"></a>
+        <div class="desc">"Strømmer av nåde"<br>80 x 80 cm<br>Olje på lerret<br>Pris kr. 5100,-</div>
+      </div>
 
-<img src="img/fredfull.jpg" alt="Bilde med tittel: Fredfull" class="bilder" style="width:600px;height:auto;">
-<p>"Fredfull"
-  <br>
-  <br>80 x 80 cm
-  <br>Olje på lerret
-  <br>Pris kr. 4800,-
-  <br>
-  <br>
-</p>
+      <div class="gallery">
+        <a target="_blank" href="img/howclose.jpg"><img src="img/howclose.jpg" alt="How Close" width="400"></a>
+        <div class="desc">"How Close"<br>80 x 80 cm<br>Olje på lerret<br>Pris kr. 5100,-</div>
+      </div>
 
-<img src="img/livetsutfordringer.jpg" alt="Bilde med tittel: Livets utfordringer" class="bilder" style="width:600px;height:auto;">
-  <p>"Når livets utfordringer slår som flammer
-  <br>og alt det kjente renner bort,
-  <br>står du likevel trygt for Gud er med deg"
-  <br>
-  <br>80 x 80 cm
-  <br>Olje på lerret
-  <br>Solgt
-  <br>
-</p>
+      <div class="gallery">
+        <a target="_blank" href="img/fredfull.jpg"><img src="img/fredfull.jpg" alt="Fredfull" width="400"></a>
+        <div class="desc">"Fredfull"<br>80 x 80 cm<br>Olje på lerret<br>Pris kr. 4800,-</div>
+      </div>
 
-<img src="img/gyllenmorgen.jpg" alt="Bilde med tittel: Gyllen morgen" class="bilder0">
-<p>"Gyllen morgen"
-  <br>
-  <br>40 x 50 cm (x2)
-  <br>Akryl på lerret
-  <br>Solgt
-  <br>
-  <br>
-</p>
+      <div class="gallery">
+        <a target="_blank" href="img/stillehav.jpg"><img src="img/stillehav.jpg" alt="Stille hav" width="400"></a>
+        <div class="desc">"Stille hav"<br>80 x 60 cm<br>Olje på lerret (deep edge canvas)<br>Pris kr. 3000,-</div>
+      </div>
 
-<img src="img/morsrollen.jpg" alt="Bilde med tittel: Morsrollen" class="bilder" style="width:600px; height:auto;">
-<p>"Morsrollen"
-  <br>
-  <br>80 x 60 cm
-  <br>Olje på lerret (deep edge canvas)
-  <br>Solgt
-  <br>
-  <br>
-</p>
+      <div style="width:100%; padding:15px;">
+        <h2>Akryl på lerret</h2>
+      </div>
 
-<img src="img/stillehav.jpg" alt="Bilde med tittel: Stille hav" class="bilder" style="width:600px; height:auto;">
-<p>"Stille hav"
-  <br>
-  <br>80 x 60 cm
-  <br>Olje på lerret (deep edge canvas)
-  <br>Pris kr. 3000,-
-  <br>
-  <br>
-</p>
+      <div class="gallery">
+        <a target="_blank" href="img/trost.jpg"><img src="img/trost.jpg" alt="Trøst" width="250px"></a>
+        <div class="desc">"Trøst"<br>50 x 70 cm<br>Akryl på lerret (deep edge canvas)<br>Pris kr. 3600,-</div>
+      </div>
 
-<img src="img/vandring.jpg" alt="Bilde med tittel: Vandring"class="bilder" style="width:450px; height:auto;">
-<p>"Vandring"
-  <br>
-  <br>60 x 80 cm
-  <br>Olje på lerret (deep edge canvas)
-  <br>Solgt
-  <br>
-  <br>
-</p>
+      <!--div style="width: 100%; padding: 15px;">
+        <h2>Akryl på papir</h2>
+      </div>
 
-<p>Ved omsetning av kunst med salgspris over kr. 2.000,- skal det betales 5% kunstavgift.
-  <br>Kunstavgiften er inkludert i prisen på alle mine bilder.
-</p>
-</div>
+      <div class="gallery">
+        <a target="_blank" href="img/xxx.jpg"><img src="img/xxx.jpg" alt="xxx" width="400"></a>
+        <div class="desc">"xxx"<br>40 x 30 cm<br>Akryl på papir<br>Pris kr. 1200,-</div>
+      </div-->
 
-<div id="footer">
-  <p>Besøksadresse: Kyrkjebakken 2, 4352 Kleppe</p>
-</div>
-<div id="copyright">
-  <p>Copyright &copy Mitt Atelier</p>
-</div>
+      <div style="width: 100%; padding: 15px;">
+        <h2>Et utvalg av solgte bilder</h2>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="img/tilgivelse.jpg"><img src="img/tilgivelse.jpg" alt="Tilgivelse" width="400"></a>
+        <div class="desc">"Tilgivelse"<br>80 x 80 cm<br>Olje på lerret<br>Solgt</div>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="img/livetsutfordringer.jpg"><img src="img/livetsutfordringer.jpg" alt="Tilgivelse" width="400"></a>
+        <div class="desc">"Når livets utfordringer slår som flammer<br>og alt det kjente renner bort,<br>står du likevel trygt for Gud er med deg"<br>80 x 80 cm<br>Olje på lerret<br>Solgt</div>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="img/gyllenmorgen.jpg"><img src="img/gyllenmorgen.jpg" alt="Gyllen morgen" width="400"></a>
+        <div class="desc">"Gyllen morgen"<br>40 x 50 cm (x2)<br>Olje på lerret<br>Solgt</div>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="img/morsrollen.jpg"><img src="img/morsrollen.jpg" alt="Morsrollen" width="400"></a>
+        <div class="desc">"Morsrollen"<br>80 x 60 cm<br>Olje på lerret<br>Solgt</div>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="img/vandring.jpg"><img src="img/vandring.jpg" alt="Vandring" width="300"></a>
+        <div class="desc">"Vandring"<br>60 x 80 cm<br>Olje på lerret<br>Solgt</div>
+      </div>
+    
+    </main>
+
+    <footer id="adressefooter">
+      <span>
+        <br> <!--et ekstra linjeskift for å holde avstand til toppen av boksen-->
+        <h4>Åpningstider:</h4>
+        <p>Galleriet har stort sett alltid åpent på</p> 
+        <h2>Torsdag kl. 14 - 18</h2>
+        <p>Noen ganger kommer vi tidligere, og ofte blir vi lengre.
+        <br>De fleste uker har vi åpent flere dager, både tidlig og seint.</p> 
+        <p>Du er velkommen inn når vi er her.<br>Du kan også ta kontakt for en avtale.</p>
+        <br><h4>Besøksadresse:</h4>
+        <p>Kyrkjebakken 2, 4352 Kleppe</p>
+        </span>
+      <span><iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJtbtPBRFHOkYR_6QSOb_ciSM&key=AIzaSyCVrsmn9YV_7c1o-82jV5V6_pjTpehSWhI" class="kart"></iframe>
+      </span>
+    </footer>
+
+    <footer id="copyright">
+      <span>Copyright &copy; Mitt Atelier</span>
+    </footer>
+    
+  </div>
+
 </body>
+
 </html>

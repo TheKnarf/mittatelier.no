@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="nb_NO">
+
 <head>
   <title>Mitt Atelier - Liv Grethe Bredland</title>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="ny.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="ikon60.png">
+
   <meta name="description" content="Nettsiden MittAtelier.no tilhører kunstneren Liv Grethe Bredland. Mitt Atelier er et lokalt galleri på Kleppe i Rogaland med Atelier og kunstutstilling.">
   <meta name="keywords" content="Mittatelier,Galleri,Atelier,Malerier,Kunst,Oljemaleri,Akrylbilde,Tegninger,Klepp,Tegnekurs,Kroki,Krokitegning,Tegnekveld,kurs,Hattelandsgården,Kleppe,SolDesignArt,Kleppekrossen">
   <meta name="author" content="Liv Grethe Bredland">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta property="og:title" content="Mitt Atelier" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="http://mittatelier.no/" />
@@ -14,38 +19,74 @@
   <meta property="og:image" content="http://mittatelier.no/img/logo2.jpg" />
   <meta property="og:locale" content="nb_NO" />
   <meta property="og:site_name" content="Mitt Atelier" />
-  <link rel="stylesheet" type="text/css" href="default.css" />
-  <link rel="shortcut icon" type="image/x-icon" href="ikon60.png">
 </head>
+
 <body>
 
-<div class="header">
-  <img src="img/logo2.jpg" alt="Mitt Atelier sin logo" class="logo">
-</div>
+  <div id="wrapper">
 
-<div id="navbar">
-	<p>
-  <a href="index.html" class="current">HJEM</a>
-	<a href="bilder.html">BILDER</a>
-  <a href="tider.html">ÅPNINGSTIDER</a>
-  <a href="kurs.html" style="display: none;">KURS</a>
-	<a href="ommittatelier.html">OM MITT ATELIER</a>
-	<a href="ommeg.html">OM MEG</a>
-	<a href="kontakt.html">KONTAKT</a>
-</p>
-</div>
+    <nav id="meny">
+      <div id="meny_lukket"><a href="#meny_aapen"><img src="img/aapnemeny.png"></a></div>
+      <div id="meny_aapen"><a href="#meny_lukket"><img src="img/lukkmeny.png"></a>
+        <ul class="flex">
+          <li><a href="index.html">Hjem</a></li>
+          <li><a href="bilder.html">Bilder</a></li>
+          <!--li><a href="kurs.html">Kurs</a></li-->
+          <li><a href="om.html">Om</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </nav>
 
-<div id="main">
-<img src="img/sommertid.png" alt="Stengt i sommer" class="bilder" style="width:600px; height:auto; border-radius:0px;">
-<!--img src="img/tegnekurs.jpg" alt="Tegnekurs i MittAtelier" class="bilder" style="width:600px; height:auto; border-radius:15px;"-->
-</div>
+    <header>
+      <img src="img/logo2_gjennomsiktig.svg" alt="Mitt Atelier sin logo">
+    </header>
 
+    <main>
+      <article>
+        <h3>Nye åpningstider</h3>
+        <img src="img/aapent2.png" alt="Åpent" class="bilder" style="width:300px; margin-bottom: 10px; margin-top: 10px;">
+        <p>Siden etableringen av Mitt Atelier her på Kleppe har åpningstiden stort sett vært på dagtid, men fra denne høsten av blir det en endring. Åpningstiden endres til midt i dagen slik at det skal bli lettere for kundene å treffe meg både før og etter normal arbeidstid.
+        <p>Ny åpningstid blir fra nå av <strong>Torsdag kl 14-18</strong>.</p>
+        <p>Jeg ser frem til å møte deg i galleriet, og husk at det ikke er kjøpeplikt (du er like velkommen innom for å ta en titt eller slå av en prat).</p>
+      </article>
+      
+      <article>
+        <h3>2-års jubileum</h3>
+        <img src="img/stemning.jpg" class="bilder" alt="Jubileum" style="border: 1px solid rgb(70, 42, 17); width: 300px; margin-bottom: 10px; margin-top: 10px;">
+        <p>I oktober har vi gleden av å feire 2-års jubileum for etableringen av Mitt Atelier i Kleppe sentrum. Det har vært en spesiell reise med en aktiv start med både oppussing, innredning, åpningsfest, tegnekurs og visninger m.m. Vi hadde en stemningsfull konsert med et stappfullt galleri i slutten av februar 2020 for så å plutselig måtte håndtere Korona-restriksjoner og -begrensninger i halvannet år.</p>
+        <p>Det er med både stolthet og takknemlighet at vi nå feirer to års dagen, og med glede og friskt mot at vi nå møter nye tider med nye muligheter.</p>
+      </article>
+      
+      <article>
+        <h3>Tegnegruppe</h3>
+        <img src="img/tegning.jpg" class="bilder" alt="tegnekurs" style="width: 300px; margin-bottom: 10px; margin-top: 10px;">
+        <p>Jeg vurderer å starte en tegnegruppe på dagtid. Mere info kommer etter hvert. Ta gjerne kontakt hvis du er interessert.</p>
+      </article>
+    </main>
 
-<div id="footer">
-  <p>Besøksadresse: Kyrkjebakken 2, 4352 Kleppe</p>
-</div>
-<div id="copyright">
-  <p>Copyright &copy Mitt Atelier</p>
-</div>
+    <footer id="adressefooter">
+      <span>
+        <br> <!--et ekstra linjeskift for å holde avstand til toppen av boksen-->
+        <h4>Åpningstider:</h4>
+        <p>Galleriet har stort sett alltid åpent på</p> 
+        <h2>Torsdag kl. 14 - 18</h2>
+        <p>Noen ganger kommer vi tidligere, og ofte blir vi lengre.
+        <br>De fleste uker har vi åpent flere dager, både tidlig og seint.</p> 
+        <p>Du er velkommen inn når vi er her.<br>Du kan også ta kontakt for en avtale.</p>
+        <br><h4>Besøksadresse:</h4>
+        <p>Kyrkjebakken 2, 4352 Kleppe</p>
+        </span>
+      <span><iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJtbtPBRFHOkYR_6QSOb_ciSM&key=AIzaSyCVrsmn9YV_7c1o-82jV5V6_pjTpehSWhI" class="kart"></iframe>
+      </span>
+    </footer>
+
+    <footer id="copyright">
+      <span>Copyright &copy; Mitt Atelier</span>
+    </footer>
+
+  </div>
+
 </body>
+
 </html>
