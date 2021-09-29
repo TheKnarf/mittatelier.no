@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-		"start": "static-server src/ --open",
+    "start": "static-server src/ --open",
     "deploy": "gh-pages --dist src/ --branch gh-pages"
   },
   "license": "UNLICENSED",

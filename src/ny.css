@@ -243,11 +243,11 @@ div.gallery {
     }
 
     #meny {
-        order: 0;
+        order: 1;
     }
 
     header {
-        order: 1;
+        order: 0;
     }
 
     main {
