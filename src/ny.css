@@ -108,6 +108,22 @@ p {
 	mmargin-right: auto;*/
 }
 
+.kurs {
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.kurs h3 {
+	text-align: center;
+}
+
+.kurs li {
+	margin-left: 35px;
+	margin-bottom: 5px;
+}
+
 /*kart i footer*/
 
 .kart {
