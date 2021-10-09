@@ -85,9 +85,7 @@ p {
 
 #copyright {
 	width: 100%;
-    /* setter litt mindre font for å unngå text-bryting på mobil */
-	font-size: ;
-	/* sentrer teksten, det sier seg vel selv... */
+    /* sentrer teksten, det sier seg vel selv... */
 	text-align: center;
 	/*bakgrunnsfarge*/
 	background-color:rgb(228, 178, 135);
@@ -102,10 +100,6 @@ p {
 	max-width: 100%;
 	/* gir bilder rett aspect ratio */
 	height: auto;
-	/* de neste tre midtstiller bilder på siden, tror denne er undvendig...
-	ddisplay: block;
-	mmargin-left: auto;
-	mmargin-right: auto;*/
 }
 
 .kurs {
@@ -149,10 +143,9 @@ header img {
 	max-width: 75%;
 	/* gir logoen rett aspect ratio */
 	height: auto;
-	/* forskyver logoen litt mot venstre*/
+	/* forskyver logoen litt mot høyre */
 	margin-left: 10%;
 }
-
 /*Bildegalleriet*/
 
 div.gallery {
@@ -164,15 +157,16 @@ div.gallery {
 }
   
   div.gallery:hover {
-	border: 1px solid #777;
+	/*lager skygge rundt bilder som hovrer*/
+    box-shadow: 0px 0px 15px black;
   }
   
-  div.gallery img {
+  div.gallery img { /*bilder i galleriet*/
 	max-width: 395px;
 	height: auto;
   }
   
-  div.desc {
+  div.desc { /*beskrivelsen under bilder i galleriet*/
 	padding: 15px;
 	text-align: center;
   }
@@ -229,10 +223,6 @@ div.gallery {
 /*CSS som gjelder for store skjermer, over 1024px*/
 
 @media all and (min-width: 1024px) {
-    /*ul.flex { ikke helt sikker på om denne er nødvendig eller ikke...
-		display: flex;
-		justify-content: center;
-	}*/
 	
 	#meny_lukket {
         display: none;
