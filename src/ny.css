@@ -86,7 +86,7 @@ p {
 #copyright {
 	width: 100%;
     /* setter litt mindre font for å unngå text-bryting på mobil */
-	font-size: 12px;
+	font-size: ;
 	/* sentrer teksten, det sier seg vel selv... */
 	text-align: center;
 	/*bakgrunnsfarge*/
