@@ -73,6 +73,10 @@ header img {
     flex-wrap: no-wrap;
 }
 
+ul li {
+    flex: auto;
+}
+
 #meny ul li a {
     display: block;
     padding: 15px;
