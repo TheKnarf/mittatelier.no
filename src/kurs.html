@@ -4,7 +4,7 @@
 <head>
   <title>Mitt Atelier - kurs</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="ny.css" />
+  <link rel="stylesheet" type="text/css" href="ny2.css" />
   <link rel="shortcut icon" type="image/x-icon" href="ikon60.png">
 
   <meta name="description"
@@ -31,29 +31,42 @@
 
   <div id="wrapper">
 
-    <nav id="meny">
-      <div id="meny_lukket"><a href="#meny_aapen"><img src="img/aapnemeny.png"></a></div>
-      <div id="meny_aapen"><a href="#meny_lukket"><img src="img/lukkmeny.png"></a>
-        <ul class="flex">
-          <li><a href="index.html">Hjem</a></li>
-          <li><a href="bilder.html">Bilder</a></li>
-          <!--li><a href="kurs.html">Kurs</a></li-->
-          <li><a href="om.html">Om</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div id="navwrapper">
 
-    <header>
-      <img src="img/logo3.jpg" alt="Mitt Atelier sin logo">
-    </header>
+      <nav id="meny">
 
-    <main>
-      <article></article>
-      
-      <article class="kurs" itemscope="itemscope" itemtype="http://scema.org/VisualArtsEvent">
-        <h3>Forskjellen på tegnegruppe og tegnekurs</h3><br>
-        <p>Tegning handler i stor grad om å øve. I <span itemprop="name">Tegnegruppen</span> har vi ikke lærer, og det blir dermed et rimeligere alternativ enn tradisjonelle kurs. Her hjelper, utfordrer, inspirerer og oppmuntrer vi hverandre.
+        <div id="meny_lukket"><a href="#meny_aapen"><img src="img/aapnemeny.png"></a>
+        </div>
+
+        <div id="meny_aapen"><a href="#meny_lukket"><img src="img/lukkmeny.png"></a>
+          <ul class="flex">
+            <li><a href="index.html">Hjem</a></li>
+            <li><a href="bilder.html">Bilder</a></li>
+            <!--li><a href="kurs.html">Kurs</a></li-->
+            <li><a href="om.html">Om</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+
+      </nav>
+
+    </div><!--id="navwrapper"-->
+
+    <div id="headerwrapper">
+      <header>
+        <img src="img/logo3.jpg" alt="Mitt Atelier sin logo">
+      </header>
+    </div><!--id="headerwrapper"-->
+
+    <div id="mainwrapper">
+    
+      <main>
+        
+        <article></article>
+
+        <article itemscope="itemscope" itemtype="http://scema.org/VisualArtsEvent">
+          <h3>Forskjellen på tegnegruppe og tegnekurs</h3><br>
+          <p>Tegning handler i stor grad om å øve. I <span itemprop="name">Tegnegruppen</span> har vi ikke lærer, og det blir dermed et rimeligere alternativ enn tradisjonelle kurs. Her hjelper, utfordrer, inspirerer og oppmuntrer vi hverandre.
           <p><h4>Hver gang vil det bli:</h4></p>
           <ul>
             <li><i>En oppvarmingsøvelse</i><br>Vi starter med en felles oppvarmingsøvelse, slik at vi blir fortrolige med tegnepapiret.</li>
@@ -61,49 +74,65 @@
             <li><i>Matpause</i><br>Vi spise lunsj sammen, ta med egen mat og drikke. Kaffe og te ordner jeg! (Det er en Mix kiosk i samme bygg, og en Rema 1000 rett over gata om du foretrekker det.)</li>
             <li><i>Egne tegneprosjekter</i><br>Du får videre anledning til å jobbe med egne prosjekter, eller du kan jobbe videre med skissene fra kroki-delen eller oppvarmingsøvelsen.</li>
           </ul>
-        <p>Oppstart blir 11. januar 2022, kl. <time datetime="2022-01-11T11:00" itemprop="startDate">11:00</time> – <time datetime="2022-01-11T14:00" itemprop="endDate">14:00</time> i <span itemprop="location" itemscope="itemscope" itemtype="http://schema.org/PostalAddress"></span><span itemprop="streetAddress">Kyrkjebakken 2</span>, <span itemprop="postalCode">4352</span> <span itemprop="adressLocality">Kleppe</span>. Da blir det tegnegruppe 7 ganger, og prisen blir 1400 kr.</p>
-        <p>Sett av tid til å øve og bli med i TEGNEGRUPPEN du også!</p>
-        <p>Fremdeles ledige plasser.</p>
-        <p>Angående korona-situasjonen: Jeg vil til enhver tid overholde gjeldende regler og skulle det ikke bli mulig å gjennomføre slik som planlagt blir utestående beløp tilbakebetalt.</p>
-        <p>Vil du bli med eller har spørsmål, så ikke nøl med å ta kontakt med Liv Grethe Bredland på 
+          <p>Oppstart blir 11. januar 2022, kl. <time datetime="2022-01-11T11:00" itemprop="startDate">11:00</time> – <time datetime="2022-01-11T14:00" itemprop="endDate">14:00</time> i <span itemprop="location" itemscope="itemscope" itemtype="http://schema.org/PostalAddress"></span><span itemprop="streetAddress">Kyrkjebakken 2</span>, <span itemprop="postalCode">4352</span> <span itemprop="adressLocality">Kleppe</span>. Da blir det tegnegruppe 7 ganger, og prisen blir 1400 kr.</p>
+          <p>Sett av tid til å øve og bli med i TEGNEGRUPPEN du også!</p>
+          <p>Fremdeles ledige plasser.</p>
+          <p>Angående korona-situasjonen: Jeg vil til enhver tid overholde gjeldende regler og skulle det ikke bli mulig å gjennomføre slik som planlagt blir utestående beløp tilbakebetalt.</p>
+          <p>Vil du bli med eller har spørsmål, så ikke nøl med å ta kontakt med Liv Grethe Bredland på 
           <a href="mailto:livis@kleppnett.no?Subject=Tegnegruppen" style="text-decoration:none" target="_top">e-post</a>.
-        </p>
-        <!--Facebook like/share button-->
-        <div id="fb-root">
+          </p>
+
+          <!--Facebook like/share button-->
+          <div id="fb-root">
+          </div>
+
+          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v12.0" nonce="fC941owH">
+          </script>
+
+          <div class="fb-like" data-href="https://mittatelier.no/kurs.html" data-width="" data-layout="button" data-action="like" data-size="large" data-share="true">
+          </div>
+          <br>
+
+        </article>
+      
+        <article></article>
+
+      </main>
+
+    </div><!--id="mainwrapper"-->
+
+    <div id="footerwrapper">
+
+      <footer id="adressefooter">
+
+        <div id="adresse">
+          <h4>Åpningstider:</h4>
+          <p>Galleriet har stort sett alltid åpent på</p>
+          <h2>Tirsdag kl. 11 - 14</h2>
+          <h2>Torsdag kl. 14 - 18</h2>
+          <p>Noen ganger kommer vi tidligere, og ofte blir vi lengre.
+            <br>De fleste uker har vi åpent flere dager, både tidlig og seint.
+          </p>
+          <p>Du er velkommen inn når vi er her.<br>Du kan også ta kontakt for en avtale.</p>
+          <br>
+          <h4>Besøksadresse:</h4>
+          <p>Kyrkjebakken 2, 4352 Kleppe</p>
+        </div><!--id="adresse"-->
+
+        <div id="kart">
+          <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJtbtPBRFHOkYR_6QSOb_ciSM&key=AIzaSyCVrsmn9YV_7c1o-82jV5V6_pjTpehSWhI"
+            class="kart"></iframe>
         </div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v12.0" nonce="fC941owH">
-        </script>
-        <div class="fb-like" data-href="https://mittatelier.no/kurs.html" data-width="" data-layout="button" data-action="like" data-size="large" data-share="true">
-        </div>
-        <br>
-      </article>
 
-      <article>
-      </article>
-    </main>
+      </footer><!--id="adressefooter"-->
 
-    <footer id="adressefooter">
-      <span>
-        <br> <!--et ekstra linjeskift for å holde avstand til toppen av boksen-->
-        <h4>Åpningstid:</h4>
-        <p>Galleriet har stort sett alltid åpent på</p>
-        <h2>Tirsdag kl. 11 - 14</h2>
-        <h2>Torsdag kl. 14 - 18</h2>
-        <p>Noen ganger kommer vi tidligere, og ofte blir vi lengre.
-        <br>De fleste uker har vi åpent flere dager, både tidlig og seint.</p> 
-        <p>Du er velkommen inn når vi er her.<br>Du kan også ta kontakt for en avtale.</p>
-        <br><h4>Besøksadresse:</h4>
-        <p>Kyrkjebakken 2, 4352 Kleppe</p>
-        </span>
-      <span><iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJtbtPBRFHOkYR_6QSOb_ciSM&key=AIzaSyCVrsmn9YV_7c1o-82jV5V6_pjTpehSWhI" class="kart"></iframe>
-      </span>
-    </footer>
+      <footer id="copyright">
+        <span>Copyright &copy; Mitt Atelier</span>
+      </footer>
 
-    <footer id="copyright">
-      <span>Copyright &copy; Mitt Atelier</span>
-    </footer>
+    </div><!--id="footerwrapper"-->
     
-  </div>
+  </div><!-- id="wrapper" -->
 
   <script>window.location.href = "#"</script>
   <!--dette scriptet lukker menyen ved bruk av tilbake-funksjonen i nettleseren-->

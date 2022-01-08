@@ -28,14 +28,12 @@ background-color: rgb(245, 239, 234);
 header {
     max-width: 1400px;
     margin: auto;
-    /*border: solid 1px green;*/
-    
-}
+ }
 
 header img {
-	/* setter størrelsen på logo til 600px i utgangspunktet */
+	/* setter størrelsen på logo til 500px i utgangspunktet */
 	width: 500px;
-	/* krymper logoen til max 75% av skjermbredden */
+	/* krymper logoen til max 75% av skjermbredden på mindre skjermer*/
 	max-width: 75%;
 	/* gir logoen rett aspect ratio */
 	height: auto;
@@ -47,39 +45,37 @@ header img {
     order: 2;
     width: 100%;
     background-color: rgb(228, 178, 135);
+    /* tekstfarge i menyen */
+    color: rgb(70, 42, 17);
 	border-bottom: solid 1px black;
+    font-weight: bold;
+    text-align: center;
 }
 
 #meny {
     max-width: 1400px;
     margin: auto;
-    font-weight: bold;
+
 }
 
 #meny div a img {
+    /* skjuler åpne/lukke-knappene for menyen på store skjermer */
     display: none;
 }
 
 #meny ul {
+    /* fjerner kulepunkt fra listeelementer i menyen */
     list-style: none;
     display: flex;
+    /* sørger for at listeelementene i menyen ligger på en rekke */
     flex-wrap: no-wrap;
-}
-
-    /*menyen dekker hele skjermen ved små skjermer*/
-#meny ul li {
-	width: 100%; 
-    text-align: center;
-    /*border-style: none none solid none;*/
-    /*margin-bottom: -2px;*/
-    background-color: rgb(228, 178, 135);
 }
 
 #meny ul li a {
     display: block;
     padding: 15px;
+    /* fjerner understreking og fargen fra linkene i menyen */
     text-decoration: none;
-    color: rgb(70, 42, 17);
 }
 
 #meny ul li:hover {
@@ -90,8 +86,6 @@ header img {
 	/*skifter bakgrunnsfarge på meny som hovrer*/
     background-color: rgb(245, 239, 234);
 }
-
-
 
 #mainwrapper {
     order: 3;
@@ -109,18 +103,18 @@ main {
 article {
     width: 33%;
     padding: 20px;
-    /*border: solid 1px black;*/
     text-align: center;
 }
 
 hr {
+    /* skuler horisontal strek mellom artikler på store skjermer */
     visibility: hidden;
 }
 
-article.om{
+article.om {
+    /* definer bredden for to artikler */
     width: 50%;
     padding: 20px;
-    /*border: solid 1px black;*/
     text-align: center;
 }
 
@@ -132,13 +126,12 @@ article.om{
 }
 
 p {
-	/*lager luft rundt tekst*/
+	/* lager luft rundt tekst */
 	padding: 5px;
 }
 #footerwrapper {
     order: 4;
     width: 100%;
-    /*border: solid 1px black;*/
     background-color: rgb(228, 178, 135);
     border-bottom: solid 1px black;
 }
@@ -148,44 +141,46 @@ p {
     margin: auto;
     display: flex;
     flex-wrap: nowrap;
-    
 }
 
 .kart {
-	/*lager kantlinje rundt kartet*/
+	/* lager kantlinje rundt kartet */
 	border: solid 1px rgb(70, 42, 17);
-	/* lager skygge*/
+	/* lager skygge */
 	box-shadow: 10px 10px 10px rgb(70, 42, 17);
 	position: relative;
 	overflow: hidden;
 	width: 600px;
 	/* krymper kartet til max 90% av skjermbredden */
 	max-width: 90%;
-	/*bestemmer en fast høyde på kartet*/
+	/* bestemmer en fast høyde på kartet */
 	height: 350px;
 }
 
 .bilder {
 	/*lager kantlinje rundt bildene*/
 	border:solid 1px rgb(70, 42, 17);
-	/* lager skygge på bilder som er merket class="bilder" i img-taggen*/
+	/* lager skygge på bilder som er merket class="bilder" i img-taggen */
 	box-shadow: 10px 10px 10px rgb(70, 42, 17);
-	/* krymper bildene til max 100% av skjermbredden*/
+	/* krymper bildene til max 100% av skjermbredden */
 	max-width: 100%;
 	/* gir bilder rett aspect ratio */
 	height: auto;
+    /* de neste tre sentrerer bildene inni div */
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 #adresse {
+    /* setter bredden for adressefeltet */
     width: 50%;
-    padding: 20px;
+    margin-top: 50px;
     text-align: center;
 }
 
 #kart {
+    /* setter bredden for kartfeltet */
     width: 50%;
     padding: 20px;
 }
@@ -204,40 +199,37 @@ p {
     display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	/*border-bottom: solid 1px rgb(70, 42, 17);*/
 }
 
 div.gallery {
 	margin: 5px;
 	border: 1px solid #ccc;
-	/*float: left;*/
 	width: 400px;
 	height: 600px;
     display: inline-block;   
     text-align: center;
 }
   
-  div.gallery:hover {
+div.gallery:hover {
 	/*lager skygge rundt bilder som hovrer*/
     box-shadow: 0px 0px 15px black;
-  }
+}
   
-  div.gallery img { /*bilder i galleriet*/
-
-  max-width: 395px;
+div.gallery img { /*bilder i galleriet*/
+    max-width: 395px;
 	height: auto;
 }
 
 div.gallery a {
-    
     text-align: center;
 }
   
-  div.desc { /*beskrivelsen under bilder i galleriet*/
+div.desc { /*beskrivelsen under bilder i galleriet*/
 	padding: 15px;
 	text-align: center;
-  }
+}
 
+/*CSS som gjelder for små skjermer, mindre enn 1024px*/
 
 @media all and (max-width: 1024px) {
 
@@ -258,36 +250,22 @@ div.gallery a {
     }
 
     #meny ul {
-        /*list-style: none;
-        display: flex;*/
+        /* tillater listeelementene i menyen til å bryte linje på små skjermer */
         flex-wrap: wrap;
     }
     
     #meny ul li {
         /*menyen dekker hele skjermen ved små skjermer*/
         width: 100%; 
-        text-align: center;
         border-style: none none solid none;
         margin-bottom: -2px;
-        background-color: rgb(228, 178, 135);
     }
     
     #meny ul li a {
         display: block;
         padding: 15px;
-        text-decoration: none;
-        color: rgb(70, 42, 17);
     }
-    
-    #meny ul li:hover {
-        /*lager skygge rundt meny som hovrer*/
-        box-shadow: 0px 0px 15px black;
-        /*gjør at den menyen som det hovres over legger seg foran de andre*/
-        z-index: 1;
-        /*skifter bakgrunnsfarge på meny som hovrer*/
-        background-color: rgb(245, 239, 234);
-    }
-    
+        
     #meny div a img {
         /*plasserer bildet for å åpne/lukke menyen øverst til venstre*/
         position: absolute;
@@ -306,21 +284,15 @@ div.gallery a {
     }
     
     main {
-        /*display: flex;*/
-        flex-wrap: wrap;
+       flex-wrap: wrap;
     }
     
     article {
         width: 100%;
-    
     }
 
     hr {
         visibility: initial;
-    }
-
-    article.om {
-        width: 100%;
     }
 
     #adressefooter {
@@ -335,12 +307,5 @@ div.gallery a {
         text-align: center;
         width: 100%;
     }
-
-
-
-
-
-
-
 
 }
