@@ -76,6 +76,7 @@ header img {
     padding: 15px;
     /* fjerner understreking og fargen fra linkene i menyen */
     text-decoration: none;
+    color: rgb(70, 42, 17);
 }
 
 #meny ul li:hover {
