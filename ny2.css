@@ -64,12 +64,17 @@ header img {
 }
 
 #meny ul {
-    width: 100%; 
+    width: 100%;
+    justify-content: space-evenly; 
     /* fjerner kulepunkt fra listeelementer i menyen */
     list-style: none;
     display: flex;
     /* sørger for at listeelementene i menyen ligger på en rekke */
     flex-wrap: no-wrap;
+}
+
+ul li {
+    flex: auto;
 }
 
 #meny ul li a {
@@ -293,7 +298,7 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
         width: 100%;
     }
 
-    .om {
+    article.om {
         width: 100%;
     }
 
