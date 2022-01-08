@@ -72,7 +72,7 @@ header img {
 }
 
 #meny ul li a {
-    display: block;
+    display: inline-block;
     padding: 15px;
     /* fjerner understreking og fargen fra linkene i menyen */
     text-decoration: none;
