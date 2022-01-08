@@ -65,7 +65,7 @@ header img {
 
 #meny ul {
     width: 100%;
-    justify-content: space-between; 
+    justify-content: space-evenly; 
     /* fjerner kulepunkt fra listeelementer i menyen */
     list-style: none;
     display: flex;
