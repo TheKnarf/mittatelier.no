@@ -64,6 +64,7 @@ header img {
 }
 
 #meny ul {
+    width: 100%; 
     /* fjerner kulepunkt fra listeelementer i menyen */
     list-style: none;
     display: flex;
@@ -76,6 +77,7 @@ header img {
     padding: 15px;
     /* fjerner understreking og fargen fra linkene i menyen */
     text-decoration: none;
+    color: rgb(70, 42, 17);
 }
 
 #meny ul li:hover {
@@ -288,6 +290,10 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     }
     
     article {
+        width: 100%;
+    }
+
+    .om {
         width: 100%;
     }
 
