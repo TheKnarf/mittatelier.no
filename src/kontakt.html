@@ -4,7 +4,7 @@
 <head>
   <title>Mitt Atelier - kontaktinfo</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="ny.css" />
+  <link rel="stylesheet" type="text/css" href="ny2.css" />
   <link rel="shortcut icon" type="image/x-icon" href="ikon60.png">
 
   <meta name="description"
@@ -31,57 +31,81 @@
 
   <div id="wrapper">
 
-    <nav id="meny">
-      <div id="meny_lukket"><a href="#meny_aapen"><img src="img/aapnemeny.png"></a></div>
-      <div id="meny_aapen"><a href="#meny_lukket"><img src="img/lukkmeny.png"></a>
-        <ul class="flex">
-          <li><a href="index.html">Hjem</a></li>
-          <li><a href="bilder.html">Bilder</a></li>
-          <!--li><a href="kurs.html">Kurs</a></li-->
-          <li><a href="om.html">Om</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div id="headerwrapper">
+      <header>
+        <img src="img/logo3.jpg" alt="Mitt Atelier sin logo">
+      </header>
+    </div><!--id="headerwrapper"-->
 
-    <header>
-      <img src="img/logo3.jpg" alt="Mitt Atelier sin logo">
-    </header>
+    <div id="navwrapper">
+      <nav id="meny">
+        <div id="meny_lukket"><a href="#meny_aapen"><img src="img/aapnemeny.png"></a></div>
+        <div id="meny_aapen"><a href="#meny_lukket"><img src="img/lukkmeny.png"></a>
+          <ul class="flex">
+            <li><a href="index.html">Hjem</a></li>
+            <li><a href="bilder.html">Bilder</a></li>
+            <!--li><a href="kurs.html">Kurs</a></li-->
+            <li><a href="om.html">Om</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div><!--id="navwrapper"-->
 
-    <main>
-      <article>
-        <h2>Kontakt</h2>
-        <p>Liv Grethe Bredland</p>
-        <p style="text-decoration:none">Mob: 90 84 00 08</p>
-        <p><a href="mailto:livis@kleppnett.no?Subject=Mitt%20Atelier" style="text-decoration:none"
+    <div id="mainwrapper">
+
+      <main>
+
+        <div id="kontakt">
+
+          <h2>Kontakt</h2>
+          <p>Liv Grethe Bredland</p>
+          <p style="text-decoration:none">Mob: 90 84 00 08</p>
+          <p><a href="mailto:livis@kleppnett.no?Subject=Mitt%20Atelier" style="text-decoration:none"
             target="_top">livis@kleppnett.no</a></p>
-        <br>
-        <p>Instagram <a href="http://www.instagram.com/mittatelier" target="_blank"><img src="img/insta.png" alt="Instagram logo" style="text-decoration:none;width:42px;height:42px;border:0;"></a> mittatelier</p>
-      </article>
-    </main>
+          <br>
+          <p>Instagram <a href="http://www.instagram.com/mittatelier" target="_blank"><img src="img/insta.png" alt="Instagram logo" style="text-decoration:none;width:42px;height:42px;border:0;"></a> mittatelier</p>
+        
+          </div><!--id="kontakt"-->
 
-    <footer id="adressefooter">
-      <span>
-        <br> <!--et ekstra linjeskift for å holde avstand til toppen av boksen-->
-        <h4>Åpningstid:</h4>
-        <p>Galleriet har stort sett alltid åpent på</p>
-        <h2>Tirsdag kl. 11 - 14</h2>
-        <h2>Torsdag kl. 14 - 18</h2>
-        <p>Noen ganger kommer vi tidligere, og ofte blir vi lengre.
-        <br>De fleste uker har vi åpent flere dager, både tidlig og seint.</p> 
-        <p>Du er velkommen inn når vi er her.<br>Du kan også ta kontakt for en avtale.</p>
-        <br><h4>Besøksadresse:</h4>
-        <p>Kyrkjebakken 2, 4352 Kleppe</p>
-        </span>
-      <span><iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJtbtPBRFHOkYR_6QSOb_ciSM&key=AIzaSyCVrsmn9YV_7c1o-82jV5V6_pjTpehSWhI" class="kart"></iframe>
-      </span>
-    </footer>
+      </main>
 
-    <footer id="copyright">
-      <span>Copyright &copy; Mitt Atelier</span>
-    </footer>
+    </div><!--id="mainwrapper"-->
 
-  </div>
+    <div id="footerwrapper">
+
+      <footer id="adressefooter">
+
+        <div id="adresse">
+          <br>
+          <!--et ekstra linjeskift for å holde avstand til toppen av boksen-->
+          <h4>Åpningstider:</h4>
+          <p>Galleriet har stort sett alltid åpent på</p>
+          <h2>Tirsdag kl. 11 - 14</h2>
+          <h2>Torsdag kl. 14 - 18</h2>
+          <p>Noen ganger kommer vi tidligere, og ofte blir vi lengre.
+            <br>De fleste uker har vi åpent flere dager, både tidlig og seint.
+          </p>
+          <p>Du er velkommen inn når vi er her.<br>Du kan også ta kontakt for en avtale.</p>
+          <br>
+          <h4>Besøksadresse:</h4>
+          <p>Kyrkjebakken 2, 4352 Kleppe</p>
+        </div><!--id="adresse"-->
+
+        <div id="kart">
+          <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJtbtPBRFHOkYR_6QSOb_ciSM&key=AIzaSyCVrsmn9YV_7c1o-82jV5V6_pjTpehSWhI"
+            class="kart"></iframe>
+        </div>
+
+      </footer><!--id="adressefooter"-->
+
+      <footer id="copyright">
+        <span>Copyright &copy; Mitt Atelier</span>
+      </footer>
+
+    </div><!--id="footerwrapper"-->
+
+  </div><!--id="wrapper"-->
 
   <script>window.location.href = "#"</script>
   <!--dette scriptet lukker menyen ved bruk av tilbake-funksjonen i nettleseren-->
