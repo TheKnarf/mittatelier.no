@@ -79,7 +79,7 @@ ul li {
 
 #meny ul li a {
     display: block;
-    padding: 15px;
+    padding: 22px;
     /* fjerner understreking og fargen fra linkene i menyen */
     text-decoration: none;
     color: rgb(70, 42, 17);
