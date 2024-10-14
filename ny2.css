@@ -108,7 +108,8 @@ main {
 }
 
 article {
-    width: 33%;
+    /* sett width til 33% dersom det skal være tre article på fremsiden, sett til 50% dersom det kun er to */
+    width: 50%;
     padding: 20px;
     text-align: center;
 }
