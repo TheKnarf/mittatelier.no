@@ -36,8 +36,8 @@
 
     <div id="navwrapper">
       <nav id="meny">
-        <div id="meny_lukket"><a href="#meny_aapen"><img src="img/aapnemeny.png"></a></div>
-        <div id="meny_aapen"><a href="#meny_lukket"><img src="img/lukkmeny.png"></a>
+        <div id="meny_lukket"><a id="open-menu"><img src="img/aapnemeny.png"></a></div>
+        <div id="meny_aapen"><a id="close-menu"><img src="img/lukkmeny.png"></a>
           <ul class="flex">
             <li><a href="index.html">Hjem</a></li>
             <li><a href="bilder.html">Bilder</a></li>
@@ -72,7 +72,7 @@
           <h3>Atelier og Galleri</h3>
           <img src="img/galleriet2.png" alt="Foto fra utstillingen i Mitt Atelier" class="bilder" style="width:240px; height:auto; margin-bottom: 10px; margin-top: 10px;">
           <p>Jeg flyttet inn og etablerte Mitt Atelier i fine lokaler i Hattelandsgården i oktober 2019. Her har jeg både et godt arbeidsrom og utstillingslokale, samt plass til å arrangere kurs og tegnekvelder. Lokalet har god eksponering fra gata, er rullestolvennlig og har gratis kundeparkering.</p>
-          <p>Galleriet er åpent for visning i åpningstider men også på forespørsel. I tillegg til åpningstidene holder jeg ofte spontant åpent når arbeidet tillater det. Ta gjerne kontakt om det er noen bilder du er interessert i, så gjør vi en avtale om visning.</p>
+          <p>Galleriet er åpent for visning på forespørsel. I tillegg holder jeg ofte spontant åpent når arbeidet tillater det. Ta gjerne kontakt om det er noen bilder du er interessert i, så gjør vi en avtale om visning.</p>
           <p>Jeg sender over hele landet, godt innpakket og forsikret. Eksempel på emballasje, frakt og forsikring med Posten: 80x80 cm bilde: kr. 400,- 60x50 cm bilde: kr. 280,-</p>
                 
         </article>
@@ -120,8 +120,7 @@
 
   </div><!-- id="wrapper" -->
 
-  <script>window.location.href = "#"</script>
-  <!--dette scriptet lukker menyen ved bruk av tilbake-funksjonen i nettleseren-->
+  <script src="menu.js"></script>
 
 </body>
 
