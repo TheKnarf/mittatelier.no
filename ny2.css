@@ -119,6 +119,11 @@ hr {
     visibility: hidden;
 }
 
+article a {
+    display: inline-block;
+    padding: 10px;
+}
+
 article.om {
     /* definer bredden for to artikler */
     width: 50%;
@@ -271,7 +276,7 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     
     #meny ul li a {
         display: block;
-        padding: 15px;
+        padding: 20px;
     }
         
     #meny div a img {
