@@ -1,0 +1,85 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#dice-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.dice {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.dice.held {
+    background-color: #ddd;
+}
+
+#roll-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#scoreboard-table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#scoreboard-table th, #scoreboard-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#scoreboard-table th {
+    background-color: #f2f2f2;
+}
+
+#scoreboard-table .highlight-row td {
+    background-color: #fafafa;
+    font-weight: bold;
+}
+
+.header-icon {
+    color: #999;
+}
+
+.score-cell {
+    cursor: pointer;
+    min-width: 50px;
+}
+
+.score-cell:hover {
+    background-color: #e9e9e9;
+}
+
+#total-score {
+    font-size: 20px;
+    font-weight: bold;
+}
