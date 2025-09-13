@@ -7,10 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let turn = 0;
     let diceWereHeldThisTurn = false;
     let waitingForNextTurn = false;
+    let lastMove = null; // To store the last move for undo
 
     // DOM Elements
     const diceContainer = document.getElementById('dice-container');
     const rollButton = document.getElementById('roll-button');
+    const undoButton = document.getElementById('undo-button');
     const scoreboardDiv = document.getElementById('scoreboard'); // This will be the table body
     const totalScoreValue = document.getElementById('total-score-value');
     const scoreboardTable = document.getElementById('scoreboard-table');
@@ -42,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
         renderScoreboard();
         rollButton.textContent = 'Kast terningene';
         rollButton.addEventListener('click', mainButtonAction);
+        undoButton.addEventListener('click', undoLastMove);
+        undoButton.disabled = true;
     }
 
     function renderDice() {
@@ -166,6 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
             dice = dice.map(() => Math.floor(Math.random() * 6) + 1);
             renderDice();
             rollButton.textContent = `Kast terningene (${rollsLeft} igjen)`;
+            
+            // Disable undo button and clear last move
+            undoButton.disabled = true;
+            lastMove = null;
 
         } else {
             // Perform a subsequent roll
@@ -217,6 +225,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (scoreCategories[category].scores[column] === null && rollsLeft < 3) {
+            // Store state for undo
+            lastMove = {
+                category,
+                column,
+                dice: [...dice],
+                held: [...held],
+                rollsLeft,
+                turn,
+                diceWereHeldThisTurn
+            };
+
             let score;
             // Rule for Column 6
             if (column === 5 && held.some(h => h)) {
@@ -237,8 +256,38 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 rollButton.textContent = 'Neste tur';
                 rollButton.disabled = false;
+                undoButton.disabled = false; // Enable undo button
             }
         }
+    }
+
+    function undoLastMove() {
+        if (!lastMove) return;
+
+        const { category, column, dice: lastDice, held: lastHeld, rollsLeft: lastRollsLeft, turn: lastTurn, diceWereHeldThisTurn: lastDiceWereHeld } = lastMove;
+
+        // Revert score
+        scoreCategories[category].scores[column] = null;
+
+        // Revert game state
+        dice = [...lastDice];
+        held = [...lastHeld];
+        rollsLeft = lastRollsLeft;
+        turn = lastTurn;
+        diceWereHeldThisTurn = lastDiceWereHeld;
+        waitingForNextTurn = false;
+
+        // Update UI
+        renderScoreboard();
+        renderDice();
+
+        // Reset buttons
+        rollButton.textContent = `Kast terningene (${rollsLeft} igjen)`;
+        rollButton.disabled = rollsLeft === 0;
+        undoButton.disabled = true;
+
+        // Clear last move
+        lastMove = null;
     }
 
     function updateTotalScore() {
@@ -291,6 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTotalScore();
         rollButton.disabled = true;
         rollButton.textContent = 'Spillet er over';
+        undoButton.disabled = true;
         alert('Spillet er over! Sluttpoengsum: ' + totalScoreValue.textContent);
     }
 

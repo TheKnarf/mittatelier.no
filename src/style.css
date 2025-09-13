@@ -7,6 +7,7 @@ body {
 }
 
 #game {
+    position: relative; /* Added */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,4 +136,19 @@ body {
 #total-score {
     font-size: 20px;
     font-weight: bold;
+}
+
+#undo-button {
+    position: absolute; /* Changed from fixed */
+    bottom: 10px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#undo-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
