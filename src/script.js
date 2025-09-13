@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let rollsLeft = 3;
     let turn = 0;
     let diceWereHeldThisTurn = false;
+    let waitingForNextTurn = false;
 
     // DOM Elements
     const diceContainer = document.getElementById('dice-container');
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderDice();
         renderScoreboard();
         rollButton.textContent = 'Kast terningene';
-        rollButton.addEventListener('click', rollDice);
+        rollButton.addEventListener('click', mainButtonAction);
     }
 
     function renderDice() {
@@ -48,11 +49,24 @@ document.addEventListener('DOMContentLoaded', () => {
         dice.forEach((value, index) => {
             const die = document.createElement('div');
             die.className = 'dice';
+            die.classList.add(`face-${value}`);
+
             if (held[index]) {
                 die.classList.add('held');
             }
-            die.textContent = value;
-            die.addEventListener('click', () => toggleHold(index));
+            if (waitingForNextTurn) {
+                die.classList.add('scored');
+            }
+
+            for (let i = 0; i < value; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                die.appendChild(dot);
+            }
+            
+            if (!waitingForNextTurn) {
+                die.addEventListener('click', () => toggleHold(index));
+            }
             diceContainer.appendChild(die);
         });
     }
@@ -139,14 +153,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function rollDice() {
-        if (rollsLeft > 0) {
+    function mainButtonAction() {
+        if (waitingForNextTurn) {
+            // Start new turn and perform first roll
+            waitingForNextTurn = false;
+            rollsLeft = 3;
+            held = [false, false, false, false, false];
+            diceWereHeldThisTurn = false;
+            
+            // Perform roll
             rollsLeft--;
-            dice = dice.map((d, i) => held[i] ? d : Math.floor(Math.random() * 6) + 1);
+            dice = dice.map(() => Math.floor(Math.random() * 6) + 1);
             renderDice();
             rollButton.textContent = `Kast terningene (${rollsLeft} igjen)`;
-            if (rollsLeft === 0) {
-                rollButton.disabled = true;
+
+        } else {
+            // Perform a subsequent roll
+            if (rollsLeft > 0) {
+                rollsLeft--;
+                dice = dice.map((d, i) => held[i] ? d : Math.floor(Math.random() * 6) + 1);
+                renderDice();
+                rollButton.textContent = `Kast terningene (${rollsLeft} igjen)`;
+                if (rollsLeft === 0) {
+                    rollButton.disabled = true;
+                }
             }
         }
     }
@@ -160,11 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function scoreTurn(category, column) {
-        // Rule for Column 6
-        if (column === 5 && diceWereHeldThisTurn) {
-            alert('Kolonne 6-poeng må komme fra ett enkelt kast med alle fem terningene. Du kan ikke holde terninger for denne kolonnen.');
-            return;
-        }
+        if (waitingForNextTurn) return; // Don't allow scoring between turns
 
         // Rule for Column 4 (sequential)
         if (column === 3) {
@@ -191,26 +217,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (scoreCategories[category].scores[column] === null && rollsLeft < 3) {
-            const score = scoreCategories[category].calc(dice);
+            let score;
+            // Rule for Column 6
+            if (column === 5 && held.some(h => h)) {
+                score = 0;
+            } else {
+                score = scoreCategories[category].calc(dice);
+            }
             scoreCategories[category].scores[column] = score;
-            nextTurn();
-        }
-    }
+            
+            waitingForNextTurn = true;
+            turn++;
 
-    function nextTurn() {
-        turn++;
-        rollsLeft = 3;
-        held = [false, false, false, false, false];
-        diceWereHeldThisTurn = false;
-        dice = [1, 1, 1, 1, 1];
-        rollButton.disabled = false;
-        rollButton.textContent = 'Kast terningene';
-
-        if (turn >= Object.keys(scoreCategories).length * NUM_COLUMNS) {
-            endGame();
-        } else {
-            renderDice();
             renderScoreboard();
+            renderDice();
+
+            if (turn >= Object.keys(scoreCategories).length * NUM_COLUMNS) {
+                endGame();
+            } else {
+                rollButton.textContent = 'Neste tur';
+                rollButton.disabled = false;
+            }
         }
     }
 
@@ -261,6 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function endGame() {
+        updateTotalScore();
         rollButton.disabled = true;
         rollButton.textContent = 'Spillet er over';
         alert('Spillet er over! Sluttpoengsum: ' + totalScoreValue.textContent);
