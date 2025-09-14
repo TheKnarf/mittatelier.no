@@ -1,16 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     const NUM_COLUMNS = 6;
+    const HIGHSCORE_KEY = 'yatzyHighscores';
+
     // Game state
     let turn = 0;
     let lastMove = null; // To store the last move for undo
 
     // DOM Elements
     const undoButton = document.getElementById('undo-button');
+    const newGameButton = document.getElementById('new-game-button');
     const scoreboardDiv = document.getElementById('scoreboard'); // This will be the table body
     const totalScoreValue = document.getElementById('total-score-value');
     const scoreboardTable = document.getElementById('scoreboard-table');
+    const toggleHighscoreButton = document.getElementById('toggle-highscore-button');
+    const sidePanel = document.getElementById('side-panel');
+    const highscoreList = document.getElementById('highscore-list');
 
-    const scoreCategories = {
+    let scoreCategories = {};
+
+    const initialScoreCategories = {
         // Upper Section
         'Enere': { scores: new Array(NUM_COLUMNS).fill(null) },
         'Toere': { scores: new Array(NUM_COLUMNS).fill(null) },
@@ -49,9 +57,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const orderedCategories = ['Enere', 'Toere', 'Treere', 'Firere', 'Femmere', 'Seksere', 'Ett par', 'To par', 'Tre like', 'Fire like', 'Liten straight', 'Stor straight', 'Hus', 'Sjanse', 'Yatzy'];
 
     function initializeGame() {
-        renderScoreboard();
+        newGameButton.addEventListener('click', newGame);
         undoButton.addEventListener('click', undoLastMove);
+        toggleHighscoreButton.addEventListener('click', toggleHighscore);
+        displayHighscores();
+        newGame();
+    }
+
+    function newGame() {
+        scoreCategories = JSON.parse(JSON.stringify(initialScoreCategories));
+        turn = 0;
+        lastMove = null;
         undoButton.disabled = true;
+        renderScoreboard();
     }
 
     function renderScoreboard() {
@@ -254,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
         turn++;
         renderScoreboard();
 
-        if (turn >= Object.keys(scoreCategories).length * NUM_COLUMNS) {
+        if (turn >= Object.keys(initialScoreCategories).length * NUM_COLUMNS) {
             endGame();
         } else {
             undoButton.disabled = false;
@@ -331,7 +349,30 @@ document.addEventListener('DOMContentLoaded', () => {
     function endGame() {
         updateTotalScore();
         undoButton.disabled = true;
-        alert('Spillet er over! Sluttpoengsum: ' + totalScoreValue.textContent);
+        const finalScore = totalScoreValue.textContent;
+        alert('Spillet er over! Sluttpoengsum: ' + finalScore);
+        saveHighscore(parseInt(finalScore, 10));
+        displayHighscores();
+    }
+
+    function toggleHighscore() {
+        sidePanel.style.display = sidePanel.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function displayHighscores() {
+        const highscores = JSON.parse(localStorage.getItem(HIGHSCORE_KEY)) || [];
+        highscoreList.innerHTML = highscores
+            .sort((a, b) => b - a)
+            .slice(0, 10)
+            .map(score => `<li>${score}</li>`)
+            .join('');
+    }
+
+    function saveHighscore(score) {
+        const highscores = JSON.parse(localStorage.getItem(HIGHSCORE_KEY)) || [];
+        highscores.push(score);
+        highscores.sort((a, b) => b - a);
+        localStorage.setItem(HIGHSCORE_KEY, JSON.stringify(highscores.slice(0, 10)));
     }
 
     initializeGame();

@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const NUM_COLUMNS = 6;
+    const HIGHSCORE_KEY = 'yatzyHighscores';
+
     // Game state
     let dice = [1, 1, 1, 1, 1];
     let held = [false, false, false, false, false];
@@ -16,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreboardDiv = document.getElementById('scoreboard'); // This will be the table body
     const totalScoreValue = document.getElementById('total-score-value');
     const scoreboardTable = document.getElementById('scoreboard-table');
+    const toggleHighscoreButton = document.getElementById('toggle-highscore-button');
+    const sidePanel = document.getElementById('side-panel');
+    const highscoreList = document.getElementById('highscore-list');
 
     const scoreCategories = {
         // Upper Section
@@ -46,6 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
         rollButton.addEventListener('click', mainButtonAction);
         undoButton.addEventListener('click', undoLastMove);
         undoButton.disabled = true;
+        toggleHighscoreButton.addEventListener('click', toggleHighscore);
+        displayHighscores();
     }
 
     function renderDice() {
@@ -343,7 +350,30 @@ document.addEventListener('DOMContentLoaded', () => {
         rollButton.disabled = true;
         rollButton.textContent = 'Spillet er over';
         undoButton.disabled = true;
-        alert('Spillet er over! Sluttpoengsum: ' + totalScoreValue.textContent);
+        const finalScore = totalScoreValue.textContent;
+        alert('Spillet er over! Sluttpoengsum: ' + finalScore);
+        saveHighscore(parseInt(finalScore, 10));
+        displayHighscores();
+    }
+
+    function toggleHighscore() {
+        sidePanel.style.display = sidePanel.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function displayHighscores() {
+        const highscores = JSON.parse(localStorage.getItem(HIGHSCORE_KEY)) || [];
+        highscoreList.innerHTML = highscores
+            .sort((a, b) => b - a)
+            .slice(0, 10)
+            .map(score => `<li>${score}</li>`)
+            .join('');
+    }
+
+    function saveHighscore(score) {
+        const highscores = JSON.parse(localStorage.getItem(HIGHSCORE_KEY)) || [];
+        highscores.push(score);
+        highscores.sort((a, b) => b - a);
+        localStorage.setItem(HIGHSCORE_KEY, JSON.stringify(highscores.slice(0, 10)));
     }
 
     // --- Calculation helpers ---
