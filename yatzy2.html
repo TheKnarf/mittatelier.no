@@ -5,22 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6 Rekkers Yatzy (Manuell)</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        #main-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        #game {
+            flex: 3;
+            min-width: 500px;
+        }
+        #side-panel {
+            flex: 1;
+            min-width: 200px;
+        }
+        #highscore-list {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+        #highscore-list li {
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
     <h1>6-rekkers Yatzy (Manuell)</h1>
-    <div id="game">
-        <table id="scoreboard-table">
-            <thead>
-            </thead>
-            <tbody id="scoreboard">
-            </tbody>
-            <tfoot>
-            </tfoot>
-        </table>
-        <div id="total-score">
-            <strong>Totalsum: <span id="total-score-value">0</span></strong>
+    <div id="main-container">
+        <div id="game">
+            <table id="scoreboard-table">
+                <thead>
+                </thead>
+                <tbody id="scoreboard">
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+            <div id="total-score">
+                <strong>Totalsum: <span id="total-score-value">0</span></strong>
+            </div>
+            <div id="game-controls" style="width: 100%;">
+                <button id="toggle-highscore-button">Vis/Skjul Highscore</button>
+                <button id="new-game-button">Nytt Spill</button>
+                <button id="undo-button">Angre</button>
+            </div>
         </div>
-        <button id="undo-button">Angre</button>
+        <div id="side-panel" style="display: none;">
+            <h2>High Scores</h2>
+            <ol id="highscore-list"></ol>
+        </div>
     </div>
     <script src="script2.js"></script>
 </body>
