@@ -120,6 +120,10 @@ body {
     font-weight: bold;
 }
 
+#scoreboard-table #bonus-row td {
+    font-weight: normal;
+}
+
 .header-icon {
     color: #999;
 }

@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'To par': { scores: new Array(NUM_COLUMNS).fill(null), calc: (d) => calcPairs(d, 2) },
         'Tre like': { scores: new Array(NUM_COLUMNS).fill(null), calc: (d) => calcOfAKindScore(d, 3) },
         'Fire like': { scores: new Array(NUM_COLUMNS).fill(null), calc: (d) => calcOfAKindScore(d, 4) },
-        'Liten straight': { scores: new Array(NUM_COLUMNS).fill(null), calc: (d) => isStraight(d, 4) ? 15 : 0 },
-        'Stor straight': { scores: new Array(NUM_COLUMNS).fill(null), calc: (d) => isStraight(d, 5) ? 20 : 0 },
+        'Liten straight': { scores: new Array(NUM_COLUMNS).fill(null), calc: (d) => [...new Set(d)].sort().join('') === '12345' ? 15 : 0 },
+        'Stor straight': { scores: new Array(NUM_COLUMNS).fill(null), calc: (d) => [...new Set(d)].sort().join('') === '23456' ? 20 : 0 },
         'Hus': { scores: new Array(NUM_COLUMNS).fill(null), calc: (d) => isFullHouse(d) ? d.reduce((a, b) => a + b, 0) : 0 },
         'Sjanse': { scores: new Array(NUM_COLUMNS).fill(null), calc: (d) => d.reduce((a, b) => a + b, 0) },
         'Yatzy': { scores: new Array(NUM_COLUMNS).fill(null), calc: (d) => ofAKind(d, 5) ? 50 : 0 }
@@ -114,6 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
         tableBody.appendChild(upperSubtotalRow);
 
         const bonusRow = document.createElement('tr');
+        bonusRow.id = 'bonus-row';
+        bonusRow.className = 'highlight-row';
         bonusRow.innerHTML = '<td>Bonus</td>';
         for (let i = 0; i < NUM_COLUMNS; i++) bonusRow.innerHTML += `<td id="bonus-col-${i}">-</td>`;
         tableBody.appendChild(bonusRow);
