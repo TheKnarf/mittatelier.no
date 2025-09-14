@@ -5,8 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6 Rekkers Yatzy</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+    <div id="choice-modal" class="modal">
+        <div class="modal-content">
+            <h2>Velg spilltype</h2>
+            <p>Vil du spille med elektroniske eller manuelle terninger?</p>
+            <button id="electronic-dice-btn">Elektroniske terninger</button>
+            <button id="manual-dice-btn">Manuelle terninger</button>
+        </div>
+    </div>
+
     <h1>6-rekkers Yatzy</h1>
     <div id="game">
         <div id="dice-and-button-container">
@@ -29,5 +61,22 @@
         <button id="undo-button">Angre</button>
     </div>
     <script src="script.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            var modal = document.getElementById('choice-modal');
+            var electronicBtn = document.getElementById('electronic-dice-btn');
+            var manualBtn = document.getElementById('manual-dice-btn');
+
+            modal.style.display = 'block';
+
+            electronicBtn.onclick = function() {
+                modal.style.display = 'none';
+            }
+
+            manualBtn.onclick = function() {
+                window.location.href = 'yatzy2.html';
+            }
+        });
+    </script>
 </body>
 </html>
