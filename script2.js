@@ -51,7 +51,27 @@ document.addEventListener('DOMContentLoaded', () => {
         'Fire like': [0, 4, 8, 12, 16, 20, 24],
         'Liten straight': [0, 15],
         'Stor straight': [0, 20],
+        'Hus': [0, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27, 28],
+        'Sjanse': [0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
         'Yatzy': [0, 50]
+    };
+
+    const suggestedScores = {
+        'Enere': 3,
+        'Toere': 6,
+        'Treere': 9,
+        'Firere': 12,
+        'Femmere': 15,
+        'Seksere': 18,
+        'Ett par': 12,
+        'To par': 22,
+        'Tre like': 18,
+        'Fire like': 24,
+        'Liten straight': 15,
+        'Stor straight': 20,
+        // 'Hus': 28,
+        // 'Sjanse': 30,
+        'Yatzy': 50
     };
     
     const orderedCategories = ['Enere', 'Toere', 'Treere', 'Firere', 'Femmere', 'Seksere', 'Ett par', 'To par', 'Tre like', 'Fire like', 'Liten straight', 'Stor straight', 'Hus', 'Sjanse', 'Yatzy'];
@@ -205,6 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
             dropdown.style.width = `${rect.width}px`;
             dropdown.style.height = `${rect.height}px`;
 
+            const suggested = suggestedScores[category];
+
             // Add a placeholder option
             const placeholder = document.createElement('option');
             placeholder.textContent = 'Select';
@@ -216,6 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const option = document.createElement('option');
                 option.value = optValue;
                 option.textContent = optValue;
+                if (optValue === suggested) {
+                    option.classList.add('suggested-option');
+                }
                 dropdown.appendChild(option);
             });
 
@@ -236,27 +261,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.appendChild(dropdown);
             dropdown.focus();
 
-        } else {
-            // Fallback to prompt for categories without predefined options
-            let score;
-            if (category === 'Hus') {
-                const choice = prompt(`Enter score for Hus (0 or 7-28):`);
-                if (choice === null) return;
-                score = parseInt(choice, 10);
-                if (isNaN(score) || (score !== 0 && (score < 7 || score > 28))) {
-                    alert("Invalid score. Please enter 0 or a number between 7 and 28.");
-                    return;
-                }
-            } else { // For Sjanse
-                const choice = prompt(`Enter score for ${category}:`);
-                if (choice === null) return;
-                score = parseInt(choice, 10);
-                if (isNaN(score) || score < 0) {
-                    alert("Invalid score. Please enter a non-negative number.");
-                    return;
-                }
-            }
-            updateScore(category, column, score);
         }
     }
 
