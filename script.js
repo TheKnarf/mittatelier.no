@@ -53,6 +53,22 @@ document.addEventListener('DOMContentLoaded', () => {
         undoButton.disabled = true;
         toggleHighscoreButton.addEventListener('click', toggleHighscore);
         displayHighscores();
+
+        const newGameButton = document.getElementById('new-game-button');
+        if (newGameButton) {
+            newGameButton.addEventListener('click', () => {
+                const isGameComplete = turn >= Object.keys(scoreCategories).length * NUM_COLUMNS;
+                const isGameStarted = turn > 0;
+
+                if (isGameComplete || !isGameStarted) {
+                    location.reload();
+                } else {
+                    if (confirm('Er du sikker på at du vil starte et nytt spill? All fremgang vil gå tapt.')) {
+                        location.reload();
+                    }
+                }
+            });
+        }
     }
 
     function renderDice() {
