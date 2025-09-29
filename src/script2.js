@@ -77,7 +77,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const orderedCategories = ['Enere', 'Toere', 'Treere', 'Firere', 'Femmere', 'Seksere', 'Ett par', 'To par', 'Tre like', 'Fire like', 'Liten straight', 'Stor straight', 'Hus', 'Sjanse', 'Yatzy'];
 
     function initializeGame() {
-        newGameButton.addEventListener('click', newGame);
+        newGameButton.addEventListener('click', () => {
+            const isGameComplete = turn >= Object.keys(initialScoreCategories).length * NUM_COLUMNS;
+            const isGameStarted = turn > 0;
+
+            if (isGameComplete || !isGameStarted) {
+                newGame();
+            } else {
+                if (confirm('Er du sikker på at du vil starte et nytt spill? All fremgang vil gå tapt.')) {
+                    newGame();
+                }
+            }
+        });
         undoButton.addEventListener('click', undoLastMove);
         toggleHighscoreButton.addEventListener('click', toggleHighscore);
         displayHighscores();

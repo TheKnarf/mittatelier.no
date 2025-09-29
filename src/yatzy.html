@@ -1,117 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategi Yatzy ver 2.3</title>
+    <title>Strategi-Yatzy ver 2.4 - Intro</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 2; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
         }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        h1, h2 {
             text-align: center;
         }
-
-        #main-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
+        .rules {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
         }
-        #game {
-            flex: 3;
-            min-width: 500px;
+        .choices {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
         }
-        #side-panel {
-            flex: 1;
-            min-width: 200px;
-        }
-        #highscore-list {
-            list-style-type: decimal;
-            padding-left: 20px;
-        }
-        #highscore-list li {
-            margin-bottom: 5px;
+        .choices a {
+            text-decoration: none;
+            color: white;
+            background: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
-    <div id="choice-modal" class="modal">
-        <div class="modal-content">
+    <div class="container">
+        <h1>Velkommen til Strategi-Yatzy!</h1>
+
+        <div class="choices">
             <h2>Velg spilltype</h2>
-            <p>Vil du spille med elektroniske eller manuelle terninger?</p>
-            <button id="electronic-dice-btn">Elektroniske terninger</button>
-            <button id="manual-dice-btn">Manuelle terninger</button>
+            <a href="yatzy_electronic.html">Spill med elektroniske terninger</a>
+            <a href="yatzy_manual.html">Spill med manuelle terninger</a>
+        </div>
+
+        <div class="rules">
+            <h2>Spilleregler</h2>
+            <p>Målet med Yatzy er å få høyest mulig poengsum ved å kaste fem terninger for å lage ulike kombinasjoner.</p>
+            <p>Hver spiller har opptil tre kast per runde. Etter hvert kast kan du velge å beholde noen terninger og kaste resten på nytt.</p>
+            <p>Rekke 1-3 kan man velge fri plassering.</p>
+            <p>Rekke 4 spilles "bundet" ovenfra, dvs at den må fylles inn fra toppen.</p>
+            <p>Rekke 5 spilles "bundet" nedenfra, dvs du må få en Yatzy for å begynne på denne, eller evt stryke Yatzy'en for å komme igang.</p>
+            <p>Rekke 6 kan kun spilles dersom samtlige terninger har blitt kastet på likt, dermed kan du ikke "holde" på noen an terningene hvis du skal legge de til i rekke 6.</p>
+            <p>Det spesielle med Strategi Yatzy er at poengene for hver rekke ganges opp med rekkenummeret. Dermed gir rekke 6 mye mer poeng enn rekke 1, følgelig er det viktigst å fylle rekkene til høyre først.</p>
+
+            <h3>Poeng - Øvre del:</h3>
+            <ul>
+                <li><strong>Enere til Seksere:</strong> Summen av terningene med samme verdi (f.eks. tre toere gir 6 poeng).</li>
+                <li><strong>Bonus:</strong> Hvis summen av øvre del er 63 poeng eller mer, får du 50 poeng i bonus.</li>
+            </ul>
+
+            <h3>Poeng - Nedre del:</h3>
+            <ul>
+                <li><strong>Ett par:</strong> To like terninger.</li>
+                <li><strong>To par:</strong> To ulike par.</li>
+                <li><strong>Tre like:</strong> Tre like terninger.</li>
+                <li><strong>Fire like:</strong> Fire like terninger.</li>
+                <li><strong>Liten straight:</strong> Terningene viser 1-2-3-4-5 (gir 15 poeng).</li>
+                <li><strong>Stor straight:</strong> Terningene viser 2-3-4-5-6 (gir 20 poeng).</li>
+                <li><strong>Hus:</strong> Tre like og ett par.</li>
+                <li><strong>Sjanse:</strong> Summen av alle fem terningene. Brukes når ingen annen kombinasjon passer.</li>
+                <li><strong>Yatzy:</strong> Alle fem terningene er like (gir 50 poeng).</li>
+            </ul>
+
         </div>
     </div>
-
-    <h1>Strategi Yatzy</h1>
-    <div id="main-container">
-        <div id="game">
-            <div id="dice-and-button-container">
-                <div id="dice-container">
-                    <!-- Dice will be generated by JavaScript -->
-                </div>
-                <button id="roll-button">Roll Dice</button>
-            </div>
-            <table id="scoreboard-table">
-                <thead>
-                </thead>
-                <tbody id="scoreboard">
-                </tbody>
-                <tfoot>
-                </tfoot>
-            </table>
-            <div id="total-score">
-                <strong>Totalsum: <span id="total-score-value">0</span></strong>
-            </div>
-            <div id="game-controls" style="width: 100%;">
-                <button id="toggle-highscore-button">Vis/Skjul Highscore</button>
-                <button id="new-game-button">Nytt Spill</button>
-                <button id="undo-button">Angre</button>
-            </div>
-        </div>
-        <div id="side-panel" style="display: none;">
-            <h2>High Scores</h2>
-            <ol id="highscore-list"></ol>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-    <script>
-        window.addEventListener('load', function() {
-            var modal = document.getElementById('choice-modal');
-            var electronicBtn = document.getElementById('electronic-dice-btn');
-            var manualBtn = document.getElementById('manual-dice-btn');
-
-            // Show the modal only if the user hasn't been redirected from the manual page
-            if (document.referrer.indexOf('yatzy2.html') === -1) {
-                 modal.style.display = 'block';
-            }
-
-            electronicBtn.onclick = function() {
-                modal.style.display = 'none';
-            }
-
-            manualBtn.onclick = function() {
-                window.location.href = 'yatzy2.html';
-            }
-        });
-    </script>
 </body>
 </html>
