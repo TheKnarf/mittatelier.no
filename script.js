@@ -123,7 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const row = document.createElement('tr');
             let rowHtml = `<td>${category}</td>`;
             scoreCategories[category].scores.forEach((score, colIndex) => {
-                rowHtml += `<td class="score-cell" data-category="${category}" data-column="${colIndex}">${score === null ? '-' : score}</td>`;
+                const isFilled = score !== null;
+                const cellClass = isFilled ? 'score-cell filled-cell' : 'score-cell';
+                rowHtml += `<td class="${cellClass}" data-category="${category}" data-column="${colIndex}">${isFilled ? score : '-'}</td>`;
             });
             row.innerHTML = rowHtml;
             tableBody.appendChild(row);
@@ -148,7 +150,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const row = document.createElement('tr');
             let rowHtml = `<td>${category}</td>`;
             scoreCategories[category].scores.forEach((score, colIndex) => {
-                rowHtml += `<td class="score-cell" data-category="${category}" data-column="${colIndex}">${score === null ? '-' : score}</td>`;
+                const isFilled = score !== null;
+                const cellClass = isFilled ? 'score-cell filled-cell' : 'score-cell';
+                rowHtml += `<td class="${cellClass}" data-category="${category}" data-column="${colIndex}">${isFilled ? score : '-'}</td>`;
             });
             row.innerHTML = rowHtml;
             tableBody.appendChild(row);
@@ -175,6 +179,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function addCellClickListeners() {
         document.querySelectorAll('.score-cell').forEach(cell => {
             cell.addEventListener('click', (e) => {
+                if (e.target.classList.contains('filled-cell')) {
+                    return;
+                }
                 const category = e.target.dataset.category;
                 const column = parseInt(e.target.dataset.column, 10);
                 scoreTurn(category, column);

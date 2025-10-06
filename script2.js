@@ -128,7 +128,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const row = document.createElement('tr');
             let rowHtml = `<td>${category}</td>`;
             scoreCategories[category].scores.forEach((score, colIndex) => {
-                rowHtml += `<td class="score-cell" data-category="${category}" data-column="${colIndex}">${score === null ? '-' : score}</td>`;
+                const isFilled = score !== null;
+                const cellClass = isFilled ? 'score-cell filled-cell' : 'score-cell';
+                rowHtml += `<td class="${cellClass}" data-category="${category}" data-column="${colIndex}">${isFilled ? score : '-'}</td>`;
             });
             row.innerHTML = rowHtml;
             tableBody.appendChild(row);
@@ -153,7 +155,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const row = document.createElement('tr');
             let rowHtml = `<td>${category}</td>`;
             scoreCategories[category].scores.forEach((score, colIndex) => {
-                rowHtml += `<td class="score-cell" data-category="${category}" data-column="${colIndex}">${score === null ? '-' : score}</td>`;
+                const isFilled = score !== null;
+                const cellClass = isFilled ? 'score-cell filled-cell' : 'score-cell';
+                rowHtml += `<td class="${cellClass}" data-category="${category}" data-column="${colIndex}">${isFilled ? score : '-'}</td>`;
             });
             row.innerHTML = rowHtml;
             tableBody.appendChild(row);
