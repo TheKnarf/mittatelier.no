@@ -92,6 +92,17 @@ document.addEventListener('DOMContentLoaded', () => {
         undoButton.addEventListener('click', undoLastMove);
         toggleHighscoreButton.addEventListener('click', toggleHighscore);
         displayHighscores();
+
+        const clearHighscoreButton = document.getElementById('clear-highscore-button');
+        if (clearHighscoreButton) {
+            clearHighscoreButton.addEventListener('click', () => {
+                if (confirm('Er du sikker på at du vil slette alle highscores?')) {
+                    localStorage.removeItem(HIGHSCORE_KEY);
+                    displayHighscores();
+                }
+            });
+        }
+
         newGame();
     }
 
@@ -370,6 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTotalScore();
         undoButton.disabled = true;
         const finalScore = totalScoreValue.textContent;
+        document.getElementById('total-score').style.display = 'block';
         alert('Spillet er over! Sluttpoengsum: ' + finalScore);
         saveHighscore(parseInt(finalScore, 10));
         displayHighscores();
