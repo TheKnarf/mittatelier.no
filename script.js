@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scoreCategories[category].scores.forEach((score, colIndex) => {
                 const isFilled = score !== null;
                 const cellClass = isFilled ? 'score-cell filled-cell' : 'score-cell';
-                rowHtml += `<td class="${cellClass}" data-category="${category}" data-column="${colIndex}">${isFilled ? score : '-'}</td>`;
+                rowHtml += `<td class="${cellClass}" data-category="${category}" data-column="${colIndex}">${isFilled ? (score === 0 ? 'X' : score) : '-'}</td>`;
             });
             row.innerHTML = rowHtml;
             tableBody.appendChild(row);
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scoreCategories[category].scores.forEach((score, colIndex) => {
                 const isFilled = score !== null;
                 const cellClass = isFilled ? 'score-cell filled-cell' : 'score-cell';
-                rowHtml += `<td class="${cellClass}" data-category="${category}" data-column="${colIndex}">${isFilled ? score : '-'}</td>`;
+                rowHtml += `<td class="${cellClass}" data-category="${category}" data-column="${colIndex}">${isFilled ? (score === 0 ? 'X' : score) : '-'}</td>`;
             });
             row.innerHTML = rowHtml;
             tableBody.appendChild(row);
@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tableFoot.innerHTML = '';
         const subtotalRow = document.createElement('tr');
         subtotalRow.className = 'highlight-row';
+        subtotalRow.id = 'sum-row';
         let subtotalHtml = '<td>Sum</td>';
         for (let i = 0; i < NUM_COLUMNS; i++) {
             subtotalHtml += `<td id="subtotal-col-${i}">0</td>`;

@@ -166,10 +166,14 @@ body {
 }
 
 .filled-cell {
-    background-color: #fafafa; /* Light grey */
+    background-color: #fafafa;
     cursor: not-allowed;
 }
 
 .filled-cell:hover {
-    background-color: #f0f0f0; /* Keep the same grey on hover */
+    background-color: #fafafa;
+}
+
+#scoreboard-table #sum-row td {
+    background-color: #f2f2f2;
 }
