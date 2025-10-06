@@ -69,6 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
+
+        const clearHighscoreButton = document.getElementById('clear-highscore-button');
+        if (clearHighscoreButton) {
+            clearHighscoreButton.addEventListener('click', () => {
+                if (confirm('Er du sikker på at du vil slette alle highscores?')) {
+                    localStorage.removeItem(HIGHSCORE_KEY);
+                    displayHighscores();
+                }
+            });
+        }
     }
 
     function renderDice() {
@@ -375,6 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
         rollButton.textContent = 'Spillet er over';
         undoButton.disabled = true;
         const finalScore = totalScoreValue.textContent;
+        document.getElementById('total-score').style.display = 'block';
         alert('Spillet er over! Sluttpoengsum: ' + finalScore);
         saveHighscore(parseInt(finalScore, 10));
         displayHighscores();

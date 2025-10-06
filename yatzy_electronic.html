@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategi-Yatzy ver 2.5 - Elektroniske terninger</title>
+    <title>Strategi-Yatzy ver 2.6 - Elektroniske terninger</title>
     <link rel="stylesheet" href="style.css">
     <style>
         #main-container {
@@ -51,6 +51,7 @@
                 <strong>Totalsum: <span id="total-score-value">0</span></strong>
             </div>
             <div id="game-controls" style="width: 100%;">
+                <button id="toggle-totalsum-button">Vis/Skjul Totalsum</button>
                 <button id="toggle-highscore-button">Vis/Skjul Highscore</button>
                 <button id="new-game-button">Nytt Spill</button>
                 <button id="undo-button">Angre</button>
@@ -59,9 +60,20 @@
         <div id="side-panel" style="display: none;">
             <h2>High Scores</h2>
             <ol id="highscore-list"></ol>
+            <button id="clear-highscore-button">Slett Highscores</button>
         </div>
     </div>
 
     <script src="script.js"></script>
+    <script>
+        document.getElementById('toggle-totalsum-button').addEventListener('click', function() {
+            var totalScore = document.getElementById('total-score');
+            if (totalScore.style.display === 'none') {
+                totalScore.style.display = 'block';
+            } else {
+                totalScore.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
