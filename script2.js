@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scoreCategories[category].scores.forEach((score, colIndex) => {
                 const isFilled = score !== null;
                 const cellClass = isFilled ? 'score-cell filled-cell' : 'score-cell';
-                rowHtml += `<td class="${cellClass}" data-category="${category}" data-column="${colIndex}">${isFilled ? score : '-'}</td>`;
+                rowHtml += `<td class="${cellClass}" data-category="${category}" data-column="${colIndex}">${isFilled ? score : ''}</td>`;
             });
             row.innerHTML = rowHtml;
             tableBody.appendChild(row);
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         bonusRow.id = 'bonus-row';
         bonusRow.className = 'highlight-row';
         bonusRow.innerHTML = '<td>Bonus</td>';
-        for (let i = 0; i < NUM_COLUMNS; i++) bonusRow.innerHTML += `<td id="bonus-col-${i}">-</td>`;
+        for (let i = 0; i < NUM_COLUMNS; i++) bonusRow.innerHTML += `<td id="bonus-col-${i}"></td>`;
         tableBody.appendChild(bonusRow);
 
         // Lower Section
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scoreCategories[category].scores.forEach((score, colIndex) => {
                 const isFilled = score !== null;
                 const cellClass = isFilled ? 'score-cell filled-cell' : 'score-cell';
-                rowHtml += `<td class="${cellClass}" data-category="${category}" data-column="${colIndex}">${isFilled ? score : '-'}</td>`;
+                rowHtml += `<td class="${cellClass}" data-category="${category}" data-column="${colIndex}">${isFilled ? score : ''}</td>`;
             });
             row.innerHTML = rowHtml;
             tableBody.appendChild(row);
