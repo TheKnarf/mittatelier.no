@@ -173,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tableFoot.innerHTML = '';
         const subtotalRow = document.createElement('tr');
         subtotalRow.className = 'highlight-row';
+        subtotalRow.id = 'sum-row';
         let subtotalHtml = '<td>Sum</td>';
         for (let i = 0; i < NUM_COLUMNS; i++) {
             subtotalHtml += `<td id="subtotal-col-${i}">0</td>`;
