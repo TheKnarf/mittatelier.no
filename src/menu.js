@@ -2,13 +2,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     const openMenuBtn = document.getElementById('open-menu');
     const closeMenuBtn = document.getElementById('close-menu');
-    const menu = document.getElementById('meny_aapen');
+    const menu = document.getElementById('meny');
 
     openMenuBtn.addEventListener('click', function () {
-        menu.style.display = 'initial';
+        menu.classList.add('menu-open');
     });
 
     closeMenuBtn.addEventListener('click', function () {
-        menu.style.display = 'none';
+        menu.classList.remove('menu-open');
     });
 });
