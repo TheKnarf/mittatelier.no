@@ -215,12 +215,14 @@ p {
 }
 
 div.gallery {
-	margin: 5px;
-	border: 1px solid #ccc;
-	width: 400px;
-	height: 600px;
+	border: none;
+	width: fit-content;
+	height: auto;
     display: inline-block;   
     text-align: center;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
   
 div.gallery:hover {
