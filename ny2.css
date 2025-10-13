@@ -281,7 +281,7 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
         /*menyen dekker hele skjermen ved små skjermer*/
         width: 100%; 
         border-style: none none solid none;
-        margin-bottom: -2px;
+        margin-bottom: 5px;
     }
     
     #meny ul li a {
@@ -290,13 +290,19 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     }
         
     #meny div button {
-        /*plasserer bildet for å åpne/lukke menyen øverst til venstre*/
+        /*plasserer bildet for å åpne/lukke menyen øverst til høyre*/
         position: absolute;
-        left: 0px;
+        top: 15px;
+        right: 15px;
         /*sørger for å holde knappen synlig også ved hover over 'hjem'*/
         z-index: 2;
         display: initial;
         color: rgb(70, 42, 17);
+    }
+
+    #meny div button svg {
+        width: 36px;
+        height: 36px;
     }
     
     #meny_aapen {
