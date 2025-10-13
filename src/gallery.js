@@ -23,3 +23,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryDivs = document.querySelectorAll('.gallery');
+    galleryDivs.forEach(galleryDiv => {
+        const descDiv = galleryDiv.querySelector('.desc');
+        const img = galleryDiv.querySelector('img');
+        if (descDiv && img) {
+            const descText = descDiv.innerText;
+            const sizeMatch = descText.match(/(\d+)\s*x\s*(\d+)\s*cm/);
+            if (sizeMatch && sizeMatch.length === 3) {
+                const width = parseInt(sizeMatch[1], 10);
+                const height = parseInt(sizeMatch[2], 10);
+                
+                const scalingFactor = 3.5;
+
+                img.style.width = `${width * scalingFactor}px`;
+                img.style.height = `${height * scalingFactor}px`;
+            }
+        }
+    });
+});
