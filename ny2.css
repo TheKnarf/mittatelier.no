@@ -58,9 +58,17 @@ header img {
 
 }
 
-#meny div a img {
+#meny div button {
     /* skjuler åpne/lukke-knappene for menyen på store skjermer */
     display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#close-menu:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
 }
 
 #meny ul {
@@ -281,20 +289,27 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
         padding: 20px;
     }
         
-    #meny div a img {
+    #meny div button {
         /*plasserer bildet for å åpne/lukke menyen øverst til venstre*/
         position: absolute;
         left: 0px;
         /*sørger for å holde knappen synlig også ved hover over 'hjem'*/
         z-index: 2;
         display: initial;
+        color: rgb(70, 42, 17);
     }
     
     #meny_aapen {
         display: none;
     }
-    
-    
+
+    #meny.menu-open #meny_aapen {
+        display: block;
+    }
+
+    #meny.menu-open #meny_lukket {
+        display: none;
+    }
     
     main {
        flex-wrap: wrap;
