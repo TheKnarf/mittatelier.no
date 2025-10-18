@@ -98,15 +98,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 
 #scoreboard-table {
     border-collapse: collapse;
     margin-bottom: 20px;
+    border: 2px solid #999;
 }
 
 #scoreboard-table th, #scoreboard-table td {
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     padding: 8px;
     text-align: center;
 }
@@ -145,14 +147,16 @@ body {
 
 #game-controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
+    gap: 10px;
 }
 
 #undo-button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 #undo-button:disabled {
@@ -175,5 +179,40 @@ body {
 }
 
 #scoreboard-table #sum-row td {
+    background-color: #f2f2f2;
+}
+
+#scoreboard-table th:nth-child(4),
+#scoreboard-table td:nth-child(4),
+#scoreboard-table th:nth-child(6),
+#scoreboard-table td:nth-child(6) {
+    border-right: 2px solid #999;
+}
+
+#scoreboard-table thead th {
+    border-bottom: 2px solid #999;
+}
+
+#scoreboard-table tfoot td {
+    border-top: 2px solid #999;
+}
+
+#scoreboard-table .upper-subtotal-row td {
+    border-top: 2px solid #999;
+}
+
+#scoreboard-table #bonus-row td {
+    border-bottom: 2px solid #999;
+}
+
+#new-game-button,
+#toggle-totalsum-button,
+#toggle-highscore-button,
+#clear-highscore-button {
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
     background-color: #f2f2f2;
 }

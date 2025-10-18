@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Upper Subtotal and Bonus Rows
         const upperSubtotalRow = document.createElement('tr');
-        upperSubtotalRow.className = 'highlight-row';
+        upperSubtotalRow.className = 'highlight-row upper-subtotal-row';
         upperSubtotalRow.innerHTML = '<td>Sum øvre</td>';
         for (let i = 0; i < NUM_COLUMNS; i++) upperSubtotalRow.innerHTML += `<td id="upper-subtotal-col-${i}">0</td>`;
         tableBody.appendChild(upperSubtotalRow);
