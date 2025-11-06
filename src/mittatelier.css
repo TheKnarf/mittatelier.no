@@ -6,7 +6,7 @@
 
 body {
 /* definerer standard skriftstørrelse og -type på nettstedet */
-font-size: 17px;
+font-size: 1.1rem;
 line-height: 1.4;
 font-family: Arial, Helvetica, sans-serif;
 background-color: rgb(245, 239, 234);
@@ -239,6 +239,7 @@ div.gallery:hover {
 }
   
 div.gallery img { /*bilder i galleriet*/
+    width: 100%;
     max-width: 395px;
 	height: auto;
 }
@@ -347,6 +348,13 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     }
 
 }
+
+@media all and (min-width: 1024px) {
+    body {
+        font-size: 1.2rem;
+    }
+}
+
 
 /* Image Popup */
 .popup {
