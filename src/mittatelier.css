@@ -278,8 +278,10 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
         top: 0;
         right: 10px;
         height: 60px;
+        width: 60px;
         display: flex;
         align-items: center;
+        justify-content: center;
         order: 2;
         background: transparent;
         border: none;
@@ -300,7 +302,7 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     #meny ul {
         display: none;
         position: absolute;
-        top: 60px;
+        top: 59px;
         right: 0;
         width: 50vw;
         background-color: white;
