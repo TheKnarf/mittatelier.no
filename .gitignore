@@ -269,4 +269,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Fiks-liste
+fiks-liste.md
+
 # End of https://www.gitignore.io/api/vim,node,linux,macos,windows,intellij+all
