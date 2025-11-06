@@ -270,15 +270,18 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     #headerwrapper {
         order: 1;
         position: relative;
-        z-index: 10;
     }
 
     header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px;
-        min-height: 60px;
+        padding: 0 10px;
+    }
+
+    header img {
+        max-width: 50%;
+        margin-left: 0;
     }
 
     #navwrapper {
@@ -288,11 +291,11 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
         right: 0;
         height: 100%;
         width: auto;
+        background-color: transparent;
+        border-bottom: none;
         display: flex;
         align-items: center;
         padding-right: 10px;
-        background-color: transparent;
-        border-bottom: none;
     }
 
     #mainwrapper {
@@ -317,7 +320,7 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         border: 1px solid #ccc;
         flex-direction: column;
-        z-index: 20;
+        z-index: 10;
     }
     
     #meny ul li {
@@ -360,7 +363,10 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
        flex-wrap: wrap;
     }
     
-    article,
+    article {
+        width: 100%;
+    }
+
     article.om {
         width: 100%;
     }
@@ -373,10 +379,13 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
         flex-wrap: wrap;
     }
 
-    #adresse,
-    #kart {
+    #adresse {
         width: 100%;
+    }
+
+    #kart {
         text-align: center;
+        width: 100%;
     }
 
 }
