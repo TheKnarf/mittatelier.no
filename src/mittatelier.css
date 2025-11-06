@@ -181,6 +181,7 @@ p {
 article .bilder {
     width: 80%;
     max-width: 350px;
+    margin-bottom: 20px;
 }
 
 .bilder {
