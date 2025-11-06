@@ -60,10 +60,11 @@ body.no-scroll {
   position: fixed;
   top: 0;
   left: 0;
-  width: 70%;
+  width: 40%;
   height: 100vh;
-  background-color: #212020;
-  color: #fff;
+  background-color: #fbf2f2; /* hvit bakgrunn på mobilmenyen*/
+  color: #000; /* svart kryss for å stenge mobilmenyen */  
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,12 +82,20 @@ body.no-scroll {
 }
 
 .mobile-menu li {
-  margin: 20px 0;
+  margin: 30px 0;         /* mer luft over og under hvert punkt */
+  padding: 10px 0;        /* ekstra plass for streken */
+  width: 100%;            /* lar streken dekke hele bredden */
+  max-width: 300px;       /* valgfritt: begrens bredden for penere layout */
+  border-bottom: 1px solid #000000; /* tynn svart strek */
+}
+
+.mobile-menu li:last-child {
+  border-bottom: none;
 }
 
 .mobile-menu a {
   text-decoration: none;
-  color: #fff;
+  color: #000000; /*tekstfarge i mobilmenyen*/
   font-size: 2rem;
   font-weight: 300;
   transition: color 0.3s;
@@ -108,4 +117,24 @@ body.no-scroll {
   .menu-toggle {
     display: none;
   }
+}
+
+/* --- Mørk bakgrunn bak menyen --- */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* svart med 50% gjennomsiktighet */
+  opacity: 0;
+  pointer-events: none; /* gjør at man kan trykke på elementer under */
+  transition: opacity 0.4s ease;
+  z-index: 90; /* ligger bak menyen (men foran innholdet) */
+}
+
+/* Når aktiv – vis overlay */
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: all; /* gjør at man kan klikke på overlay for å lukke menyen */
 }
