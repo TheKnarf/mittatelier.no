@@ -263,26 +263,31 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
 
 @media all and (max-width: 1024px) {
 
+    body.menu-open-body-lock { 
+        overflow: hidden;
+    }
+
     #wrapper {
-        position: relative;
         flex-direction: column;
     }
 
     #headerwrapper {
         order: 1;
         min-height: 60px;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
     }
 
     #navwrapper {
-        position: absolute;
-        top: 0;
-        right: 10px;
-        height: 60px;
-        display: flex;
-        align-items: center;
         order: 2;
-        background: transparent;
+        position: fixed; 
+        top: 10px;
+        right: 10px;
+        z-index: 1001; 
         border: none;
+        background: transparent;
+        width: auto;
     }
 
     #mainwrapper {
@@ -293,36 +298,44 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
         order: 4;
     }
 
-    #meny {
-        position: static;
-    }
-
     #meny ul {
         display: none;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 50vw;
-        background-color: white;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        border: 1px solid #ccc;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
         flex-direction: column;
-        z-index: 20;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
     }
     
     #meny ul li {
-        width: 100%; 
-        border-bottom: 1px solid #eee;
+        width: auto;
+        border: none;
     }
     
     #meny ul li a {
         display: block;
-        padding: 15px 20px;
+        padding: 20px;
+        font-size: 1.5rem;
+        color: white;
+        font-weight: bold;
     }
         
     #meny div button {
         display: initial;
         color: rgb(70, 42, 17);
+    }
+
+    #meny_lukket button {
+        color: rgb(70, 42, 17);
+    }
+
+    #meny_aapen button {
+        color: white;
     }
 
     #meny div button svg {
