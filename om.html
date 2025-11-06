@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="mittatelier.css" />
   <link rel="shortcut icon" type="image/x-icon" href="ikon60.png">
+  <link rel="stylesheet" href="mobile-menu.css" /><!--mobilmeny-->
 
   <meta name="description" content="Nettsiden MittAtelier.no tilhører kunstneren Liv Grethe Bredland. Mitt Atelier er et lokalt galleri på Kleppe i Rogaland med Atelier og kunstutstilling.">
   <meta name="keywords" content="Mittatelier,Galleri,Atelier,Malerier,Kunst,Oljemaleri,Akrylbilde,Tegninger,Klepp,Tegnekurs,Kroki,Krokitegning,Tegnekveld,kurs,Hattelandsgården,Kleppe,SolDesignArt,Kleppekrossen">
@@ -35,15 +36,37 @@
     </div><!--id="headerwrapper"-->
 
     <div id="navwrapper">
+
+      <!--mobilmeny-->
+      <header class="header">
+        <button class="menu-toggle" id="menuToggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </header>
+
+      <nav class="mobile-menu" id="mobileMenu">
+        <ul>
+          <li><a href="index.html">Hjem</a></li>
+          <li><a href="bilder.html">Bilder</a></li>
+          <!--li><a href="kurs.html">Kurs</a></li-->
+          <li><a href="om.html">Om</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <!--mobilmeny-->
+
+
       <nav id="meny">
-        <div id="meny_lukket"><button id="open-menu" aria-label="Meny"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        <!--div id="meny_lukket"><button id="open-menu" aria-label="Meny"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
               xmlns="http://www.w3.org/2000/svg">
             <path d="M3 6h18M3 12h18M3 18h18"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg></button></div>
         <div id="meny_aapen"><button id="close-menu" aria-label="Lukk meny"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg></button>
+          </svg></button-->
           <ul class="flex">
             <li><a href="index.html">Hjem</a></li>
             <li><a href="bilder.html">Bilder</a></li>
@@ -228,6 +251,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+
+<script src="mobile-menu.js"></script><!--mobilmeny-->
+
 
 </body>
 
