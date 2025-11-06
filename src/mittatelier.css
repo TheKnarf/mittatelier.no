@@ -263,6 +263,15 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
 
 @media all and (max-width: 1024px) {
 
+    #wrapper {
+        flex-direction: column;
+    }
+
+    #headerwrapper {
+        order: 1;
+        position: relative;
+    }
+
     header {
         display: flex;
         justify-content: space-between;
@@ -276,11 +285,17 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     }
 
     #navwrapper {
-        order: initial;
+        order: 2;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
         width: auto;
         background-color: transparent;
         border-bottom: none;
-        position: relative;
+        display: flex;
+        align-items: center;
+        padding-right: 10px;
     }
 
     #mainwrapper {
@@ -291,36 +306,34 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
         order: 4;
     }
 
+    #meny {
+        position: static;
+    }
+
     #meny ul {
         display: none;
         position: absolute;
-        top: calc(100% + 10px);
+        top: 100%;
         right: 0;
         width: 50vw;
         background-color: white;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         border: 1px solid #ccc;
         flex-direction: column;
-    }
-
-    #meny.menu-open ul {
-        display: flex;
+        z-index: 10;
     }
     
     #meny ul li {
-        /*menyen dekker hele skjermen ved små skjermer*/
         width: 100%; 
-        border-style: none none solid none;
-        margin-bottom: 5px;
+        border-bottom: 1px solid #eee;
     }
     
     #meny ul li a {
         display: block;
-        padding: 20px;
+        padding: 15px 20px;
     }
         
     #meny div button {
-        position: static;
         display: initial;
         color: rgb(70, 42, 17);
     }
@@ -340,6 +353,10 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
 
     #meny.menu-open #meny_lukket {
         display: none;
+    }
+
+    #meny.menu-open ul {
+        display: flex;
     }
     
     main {
