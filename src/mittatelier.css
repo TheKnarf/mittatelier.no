@@ -263,12 +263,24 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
 
 @media all and (max-width: 1024px) {
 
-    #navwrapper {
-        order: 1;
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
     }
 
-    #headerwrapper {
-        order: 2;
+    header img {
+        max-width: 50%;
+        margin-left: 0;
+    }
+
+    #navwrapper {
+        order: initial;
+        width: auto;
+        background-color: transparent;
+        border-bottom: none;
+        position: relative;
     }
 
     #mainwrapper {
@@ -280,8 +292,19 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     }
 
     #meny ul {
-        /* tillater listeelementene i menyen til å bryte linje på små skjermer */
-        flex-wrap: wrap;
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        width: 50vw;
+        background-color: white;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        border: 1px solid #ccc;
+        flex-direction: column;
+    }
+
+    #meny.menu-open ul {
+        display: flex;
     }
     
     #meny ul li {
@@ -297,12 +320,7 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     }
         
     #meny div button {
-        /*plasserer bildet for å åpne/lukke menyen øverst til høyre*/
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        /*sørger for å holde knappen synlig også ved hover over 'hjem'*/
-        z-index: 2;
+        position: static;
         display: initial;
         color: rgb(70, 42, 17);
     }
