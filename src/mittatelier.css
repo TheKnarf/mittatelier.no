@@ -178,6 +178,11 @@ p {
 	height: 350px;
 }
 
+article .bilder {
+    width: 80%;
+    max-width: 350px;
+}
+
 .bilder {
 	/*lager kantlinje rundt bildene*/
 	border:solid 1px rgb(70, 42, 17);
