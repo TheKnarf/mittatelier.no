@@ -264,42 +264,46 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
 @media all and (max-width: 1024px) {
 
     #wrapper {
-        flex-wrap: nowrap;
-        align-items: center;
+        flex-direction: column;
     }
 
     #headerwrapper {
         order: 1;
-        flex-grow: 1;
-        border-bottom: none;
-        background-color: white;
+        position: relative;
     }
 
     header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 0 10px;
     }
 
     header img {
+        max-width: 50%;
         margin-left: 0;
     }
 
     #navwrapper {
         order: 2;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
         width: auto;
         background-color: transparent;
         border-bottom: none;
-        position: relative;
+        display: flex;
+        align-items: center;
         padding-right: 10px;
     }
 
     #mainwrapper {
         order: 3;
-        width: 100%;
     }
 
     #footerwrapper {
         order: 4;
-        width: 100%;
     }
 
     #meny {
