@@ -82,15 +82,15 @@ body.no-scroll {
 }
 
 .mobile-menu li {
-  margin: 30px 0;         /* mer luft over og under hvert punkt */
-  padding: 10px 0;        /* ekstra plass for streken */
-  width: 100%;            /* lar streken dekke hele bredden */
-  max-width: 300px;       /* valgfritt: begrens bredden for penere layout */
-  border-bottom: 1px solid #000000; /* tynn svart strek */
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15); /* strek */
+  padding: 35px 0;        /* lik avstand over og under teksten */
+  margin: 0;              /* fjern margin, vi bruker padding i stedet */
+  width: 80%;             /* sentrer og gi litt luft på sidene */
 }
 
 .mobile-menu li:last-child {
-  border-bottom: none;
+  border-bottom: none;    /* fjern strek under siste punkt */
 }
 
 .mobile-menu a {
