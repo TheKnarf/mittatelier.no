@@ -301,15 +301,28 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     #meny ul {
         display: none;
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.9);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 75vw;
+        height: 75vh;
+        background-color: white;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         z-index: 1000;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    #meny ul::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
     }
     
     #meny ul li {
@@ -321,13 +334,12 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
         display: block;
         padding: 20px;
         font-size: 1.5rem;
-        color: white;
+        color: black;
         font-weight: bold;
     }
         
     #meny div button {
         display: initial;
-        color: rgb(70, 42, 17);
     }
 
     #meny_lukket button {
@@ -335,7 +347,7 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     }
 
     #meny_aapen button {
-        color: white;
+        color: black;
     }
 
     #meny div button svg {
