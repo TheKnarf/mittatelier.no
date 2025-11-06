@@ -277,11 +277,14 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
         justify-content: space-between;
         align-items: center;
         padding: 0 10px;
+        height: 80px;
     }
 
     header img {
         max-width: 50%;
         margin-left: 0;
+        height: auto;
+        max-height: 70px;
     }
 
     #navwrapper {
@@ -289,7 +292,7 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
         position: absolute;
         top: 0;
         right: 0;
-        height: 100%;
+        height: 80px;
         width: auto;
         background-color: transparent;
         border-bottom: none;
@@ -313,7 +316,7 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     #meny ul {
         display: none;
         position: absolute;
-        top: 100%;
+        top: 80px;
         right: 0;
         width: 50vw;
         background-color: white;
