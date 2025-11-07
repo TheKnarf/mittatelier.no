@@ -150,6 +150,7 @@ p {
 	/* lager luft rundt tekst */
 	padding: 5px;
 }
+
 #footerwrapper {
     order: 4;
     width: 100%;
@@ -261,7 +262,7 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
 
 /*CSS som gjelder for små skjermer, mindre enn 1024px*/
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1280px) {
 
     body.menu-open-body-lock { 
         overflow: hidden;
@@ -331,12 +332,18 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
 
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: 1280px) {
     body {
         font-size: 1.2rem;
     }
 }
 
+@media all and (max-width: 600px) {
+  body {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+}
 
 /* Image Popup */
 .popup {
