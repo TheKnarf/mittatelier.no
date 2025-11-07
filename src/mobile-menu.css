@@ -113,7 +113,7 @@ body.no-scroll {
 }
 
 /* Skjuler hamburger på desktop */
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .menu-toggle {
     display: none;
   }
