@@ -113,12 +113,19 @@ main {
     margin: auto;
     display: flex;
     flex-wrap: nowrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 article {
     /* sett width til 33% dersom det skal være tre article på fremsiden, sett til 50% dersom det kun er to */
     width: 50%;
+    max-width: 500px;
     padding: 20px;
+    text-align: justify;
+}
+
+article h3 {
     text-align: center;
 }
 
@@ -135,7 +142,12 @@ article a {
 article.om {
     /* definer bredden for to artikler */
     width: 50%;
+    max-width: 500px;
     padding: 20px;
+    text-align: justify;
+}
+
+article.om h3 {
     text-align: center;
 }
 
@@ -280,7 +292,19 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
         min-height: 60px;
         display: flex;
         align-items: center;
-        padding: 0 10px;
+        justify-content: center;
+        padding: 0;
+    }
+
+    #headerwrapper header {
+        text-align: center;
+        width: 100%;
+    }
+
+    header img {
+        margin-left: 0;
+        margin-right: 0;
+        width: 250px;
     }
 
     #navwrapper {
