@@ -27,19 +27,22 @@ const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
 const menuOverlay = document.querySelector('.menu-overlay');
 const menuLinks = document.querySelectorAll('.mobile-menu a');
+const navWrapper = document.getElementById('navwrapper');
 
 // --- Funksjon for å åpne/lukke meny ---
 function toggleMenu() {
   mobileMenu.classList.toggle('active');
   menuOverlay.classList.toggle('active');
-  menuToggle.classList.toggle('open');
+  menuToggle.classList.toggle('active');
+  navWrapper.classList.toggle('menu-active');
 }
 
 // --- Funksjon for å lukke menyen helt ---
 function closeMenu() {
   mobileMenu.classList.remove('active');
   menuOverlay.classList.remove('active');
-  menuToggle.classList.remove('open');
+  menuToggle.classList.remove('active');
+  navWrapper.classList.remove('menu-active');
 }
 
 // --- Åpne/lukke meny når hamburgeren klikkes ---
