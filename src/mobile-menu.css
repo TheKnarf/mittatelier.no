@@ -104,15 +104,17 @@ body.no-scroll {
   }
 
   #meny a {
+    display: inline-block;
+    padding: 0;
     text-decoration: none;
     color: #000000; /*tekstfarge i mobilmenyen*/
     font-size: 2rem;
     font-weight: 300;
-    transition: color 0.3s;
+    transition: all 0.3s;
   }
 
   #meny a:hover {
-    color: #aaa;
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
   /* Aktiv meny på mobil */
