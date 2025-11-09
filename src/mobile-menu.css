@@ -59,8 +59,8 @@ body.no-scroll {
   transform: rotate(-45deg) translate(8px, -8px);
 }
 
-/* --- Mobilmeny styling (< 1024px) --- */
-@media (max-width: 1023px) {
+/* --- Mobilmeny styling (< 1080px) --- */
+@media (max-width: 1080px) {
   #meny {
     position: fixed;
     top: 0;
@@ -126,7 +126,7 @@ body.no-scroll {
 }
 
 /* Skjuler hamburger på desktop */
-@media (min-width: 1280px) {
+@media (min-width: 1081px) {
   .menu-toggle {
     display: none;
   }

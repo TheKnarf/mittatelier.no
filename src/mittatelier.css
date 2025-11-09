@@ -6,10 +6,10 @@
 
 body {
 /* definerer standard skriftstørrelse og -type på nettstedet */
-font-size: 1.1rem;
-line-height: 1.4;
-font-family: Arial, Helvetica, sans-serif;
-background-color: rgb(245, 239, 234);
+    font-size: 1.1rem;
+    line-height: 1.4;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(245, 239, 234);
 }
 
 #wrapper {
@@ -19,7 +19,7 @@ background-color: rgb(245, 239, 234);
 }
 
 #headerwrapper {
-    order: 1;
+    order: 1; /* Bestemmer dette elementets rekkefølge på skjermen */
     width: 100%;
     background-color: white;
 	border-bottom: solid 1px black;
@@ -31,22 +31,17 @@ header {
  }
 
 header img {
-	/* setter størrelsen på logo til 500px i utgangspunktet */
-	width: 500px;
-	/* krymper logoen til max 75% av skjermbredden på mindre skjermer*/
-	max-width: 75%;
-	/* gir logoen rett aspect ratio */
-	height: auto;
-	/* forskyver logoen litt mot høyre */
-	margin-left: 20px;
+	width: 500px; /* setter størrelsen på logo til 500px i utgangspunktet */
+	max-width: 75%; /* krymper logoen til max 75% av skjermbredden på mindre skjermer*/
+	height: auto; /* gir logoen rett aspect ratio */
+	margin-left: 20px; /* forskyver logoen litt mot høyre */
 }
 
 #navwrapper {
-    order: 2;
+    order: 2; /* Bestemmer dette elementets rekkefølge på skjermen */
     width: 100%;
     background-color: rgb(228, 178, 135);
-    /* tekstfarge i menyen */
-    color: rgb(70, 42, 17);
+    color: rgb(70, 42, 17); /* tekstfarge i menyen */
 	border-bottom: solid 1px black;
     font-weight: bold;
     text-align: center;
@@ -55,7 +50,6 @@ header img {
 #meny {
     max-width: 1400px;
     margin: auto;
-
 }
 
 #meny div button {
@@ -92,8 +86,7 @@ ul li {
 #meny ul li a {
     display: inline-block;
     padding: 0;
-    /* fjerner understreking og fargen fra linkene i menyen */
-    text-decoration: none;
+    text-decoration: none; /* fjerner understreking og fargen fra linkene i menyen */
     color: rgb(70, 42, 17);
     transition: all 0.3s ease;
 }
@@ -103,7 +96,7 @@ ul li {
 }
 
 #mainwrapper {
-    order: 3;
+    order: 3; /* Bestemmer dette elementets rekkefølge på skjermen */
     width: 100%;
     border-bottom: solid 1px black;
 }
@@ -126,12 +119,11 @@ article {
 }
 
 article h3 {
-    text-align: center;
+    text-align: center; /* Sentrerer overskrifter til artikler*/
 }
 
 hr {
-    /* skuler horisontal strek mellom artikler på store skjermer */
-    visibility: hidden;
+    visibility: hidden; /* skuler horisontal strek mellom artikler på store skjermer */
 }
 
 article a {
@@ -140,15 +132,10 @@ article a {
 }
 
 article.om {
-    /* definer bredden for to artikler */
-    width: 50%;
+    width: 50%; /* definer bredden for to artikler */
     max-width: 500px;
     padding: 20px;
     text-align: justify;
-}
-
-article.om h3 {
-    text-align: center;
 }
 
 #kontakt {
@@ -159,12 +146,11 @@ article.om h3 {
 }
 
 p {
-	/* lager luft rundt tekst */
-	padding: 5px;
+	padding: 5px; /* lager luft rundt tekst */
 }
 
 #footerwrapper {
-    order: 4;
+    order: 4; /* Bestemmer dette elementets rekkefølge på skjermen */
     width: 100%;
     background-color: rgb(228, 178, 135);
     border-bottom: solid 1px black;
@@ -192,8 +178,8 @@ p {
 }
 
 article .bilder {
-    width: 80%;
-    max-width: 350px;
+    width: 80%; /* Bilder til artikkel har bredde max 80% av skjermen */
+    max-width: 350px; /* Bilder til artikkel har en maksimal bredde på 350px */
     margin-bottom: 20px;
 }
 
@@ -213,22 +199,20 @@ article .bilder {
 }
 
 #adresse {
-    /* setter bredden for adressefeltet */
-    width: 50%;
-    margin-top: 50px;
-    text-align: center;
+    width: 50%; /* setter bredden for adressefeltet */
+    text-align: center; /* sentrerer tekst horisontalt */
+    margin: auto; /* sentrerer tekst vertikalt */
 }
 
 #kart {
-    /* setter bredden for kartfeltet */
-    width: 50%;
-    padding: 20px;
+    width: 50%; /* setter bredden for kartfeltet */
+    padding: 20px; /* legger til luft rundt kartet */
 }
 
 #copyright {
-    width: 100%;
-    padding: 20px;
-    text-align: center;
+    width: 100%; /* setter bredden på copyright feltet */
+    padding: 20px;/* legger til luft rundt teksten */
+    text-align: center; /* sentrerer tekst horisontalt */
 }
 
 /*Bildegalleriet*/
@@ -253,8 +237,7 @@ div.gallery {
 }
   
 div.gallery:hover {
-	/*lager skygge rundt bilder som hovrer*/
-    box-shadow: 0px 0px 15px black;
+    box-shadow: 0px 0px 15px black; /*lager skygge rundt bilder som hovrer*/
 }
   
 div.gallery img { /*bilder i galleriet*/
@@ -272,24 +255,24 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
 	text-align: center;
 }
 
-/*CSS som gjelder for små skjermer, mindre enn 1024px*/
+/*CSS som gjelder for små skjermer, mindre enn 1080px*/
 
-@media all and (max-width: 1280px) {
+@media all and (max-width: 1080px) {
 
     body.menu-open-body-lock { 
         overflow: hidden;
     }
 
     body {
-        font-size: 1.4rem; /*Større skrift på små skjermer*/
+        font-size: 1.5rem; /*Større skrift på små skjermer*/
     }
     
     #wrapper {
-        flex-direction: column;
+        flex-direction: column; /* Plasserer alle elementer etter hverandre nedover på små skjermer*/
     }
 
     #headerwrapper {
-        order: 1;
+        order: 1; /* Bestemmer dette elementets rekkefølge på mobilskjerm */
         min-height: 60px;
         display: flex;
         align-items: center;
@@ -298,18 +281,16 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     }
 
     #headerwrapper header {
-        text-align: center;
+        text-align: center; /* Plasserer logo sentrert på mobilskjerm */
         width: 100%;
     }
 
     header img {
-        margin-left: 0;
-        margin-right: 0;
-        width: 250px;
+        width: 250px; /* definerer logo til å være 250px på mobilskjerm */
     }
 
     #navwrapper {
-        order: 2;
+        order: 2; /* Bestemmer dette elementets rekkefølge på mobilskjerm */
         position: absolute;
         top: 10px;
         left: 10px;
@@ -320,11 +301,11 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     }
 
     #mainwrapper {
-        order: 3;
+        order: 3; /* Bestemmer dette elementets rekkefølge på mobilskjerm */
     }
 
     #footerwrapper {
-        order: 4;
+        order: 4; /* Bestemmer dette elementets rekkefølge på mobilskjerm */
     }
 
     main {
@@ -333,11 +314,11 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
     
     article,
     article.om {
-        width: 100%;
+        width: 100%; /* Setter bredden til artikler til 100% på mobilskjerm */
     }
 
     hr {
-        visibility: initial;
+        visibility: initial; /* Setter visning av horisontal strek (mellom artikler på mobilskjerm) på */
     }
 
     #adressefooter {
@@ -346,23 +327,10 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
 
     #adresse,
     #kart {
-        width: 100%;
-        text-align: center;
+        width: 100%; /* Setter bredden til adressefelt og kart til 100% på mobilskjerm */
+        text-align: center; /* Sentrerer teksten */
     }
 
-}
-
-@media all and (min-width: 1280px) {
-    body {
-        font-size: 1.2rem;
-    }
-}
-
-@media all and (max-width: 600px) {
-  body {
-    font-size: 1.5rem;
-    line-height: 1.6;
-  }
 }
 
 /* Image Popup */
