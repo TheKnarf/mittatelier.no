@@ -326,10 +326,6 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
         order: 4;
     }
 
-    #meny ul {
-        display: none; /*Gjemmer menylinjen ved små skjermer*/
-    }
-
     main {
        flex-wrap: wrap;
     }

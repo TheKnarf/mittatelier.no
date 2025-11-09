@@ -24,14 +24,14 @@
 
 // --- Hent elementene ---
 const menuToggle = document.querySelector('.menu-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
+const mainNav = document.getElementById('meny');
 const menuOverlay = document.querySelector('.menu-overlay');
-const menuLinks = document.querySelectorAll('.mobile-menu a');
+const menuLinks = document.querySelectorAll('#meny a');
 const navWrapper = document.getElementById('navwrapper');
 
 // --- Funksjon for å åpne/lukke meny ---
 function toggleMenu() {
-  mobileMenu.classList.toggle('active');
+  mainNav.classList.toggle('active');
   menuOverlay.classList.toggle('active');
   menuToggle.classList.toggle('active');
   navWrapper.classList.toggle('menu-active');
@@ -39,7 +39,7 @@ function toggleMenu() {
 
 // --- Funksjon for å lukke menyen helt ---
 function closeMenu() {
-  mobileMenu.classList.remove('active');
+  mainNav.classList.remove('active');
   menuOverlay.classList.remove('active');
   menuToggle.classList.remove('active');
   navWrapper.classList.remove('menu-active');
