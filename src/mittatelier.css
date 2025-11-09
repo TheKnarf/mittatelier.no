@@ -285,10 +285,10 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
 
     #navwrapper {
         order: 2;
-        position: fixed; 
+        position: absolute;
         top: 10px;
-        right: 10px;
-        z-index: 1001; 
+        left: 10px;
+        z-index: 1001;
         border: none;
         background: transparent;
         width: auto;

@@ -5,16 +5,9 @@ body.no-scroll {
 
 /* --- Header og hamburger --- */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  z-index: 1000;
+  justify-content: flex-start;
   background: transparent;
 }
 
@@ -44,15 +37,26 @@ body.no-scroll {
   transition: all 0.3s ease;
 }
 
-/* Hamburger aktiv animasjon */
+/* Når menyen er åpen, gjør navwrapper fixed */
+#navwrapper.menu-active {
+  position: fixed !important;
+}
+
+.menu-toggle.active {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+/* Hamburger aktiv animasjon - transform til X */
 .menu-toggle.active .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(8px, 8px);
 }
 .menu-toggle.active .bar:nth-child(2) {
   opacity: 0;
 }
 .menu-toggle.active .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(8px, -8px);
 }
 
 /* --- Mobilmeny overlay --- */
