@@ -59,61 +59,70 @@ body.no-scroll {
   transform: rotate(-45deg) translate(8px, -8px);
 }
 
-/* --- Mobilmeny overlay --- */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 40%;
-  height: 100vh;
-  background-color: #fbf2f2; /* hvit bakgrunn på mobilmenyen*/
-  color: #000; /* svart kryss for å stenge mobilmenyen */  
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: scale(1.1);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 1s ease-out;
-  z-index: 100;
-}
+/* --- Mobilmeny styling (< 1024px) --- */
+@media (max-width: 1023px) {
+  #meny {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100vh;
+    background-color: #fbf2f2; /* hvit bakgrunn på mobilmenyen*/
+    color: #000; /* svart kryss for å stenge mobilmenyen */
 
-.mobile-menu ul {
-  list-style: none;
-  text-align: center;
-  padding: 0;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s ease-out;
+    z-index: 100;
+  }
 
-.mobile-menu li {
-  text-align: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15); /* strek */
-  padding: 35px 0;        /* lik avstand over og under teksten */
-  margin: 0;              /* fjern margin, vi bruker padding i stedet */
-  width: 80%;             /* sentrer og gi litt luft på sidene */
-}
+  #meny ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 
-.mobile-menu li:last-child {
-  border-bottom: none;    /* fjern strek under siste punkt */
-}
+  #meny li {
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15); /* strek */
+    padding: 35px 0;        /* lik avstand over og under teksten */
+    margin: 0;              /* fjern margin, vi bruker padding i stedet */
+    width: 80%;             /* sentrer og gi litt luft på sidene */
+    flex: none;
+  }
 
-.mobile-menu a {
-  text-decoration: none;
-  color: #000000; /*tekstfarge i mobilmenyen*/
-  font-size: 2rem;
-  font-weight: 300;
-  transition: color 0.3s;
-}
+  #meny li:last-child {
+    border-bottom: none;    /* fjern strek under siste punkt */
+  }
 
-.mobile-menu a:hover {
-  color: #aaa;
-}
+  #meny a {
+    display: inline-block;
+    padding: 0;
+    text-decoration: none;
+    color: #000000; /*tekstfarge i mobilmenyen*/
+    font-size: 2rem;
+    font-weight: 300;
+    transition: all 0.3s;
+  }
 
-/* Aktiv meny */
-.mobile-menu.active {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: all;
+  #meny a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  /* Aktiv meny på mobil */
+  #meny.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+  }
 }
 
 /* Skjuler hamburger på desktop */
