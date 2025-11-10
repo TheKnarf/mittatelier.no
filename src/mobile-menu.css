@@ -123,12 +123,24 @@ body.no-scroll {
     transform: scale(1);
     pointer-events: all;
   }
+
+  /*TEST FOR IPAD Ensure hamburger is always visible on mobile/tablet when menu is closed */
+  .hamburger-menu,
+  .mobile-menu-toggle {
+    display: block !important;
+  }
+
+  /*TEST FOR IPAD Hide only when explicitly needed */
+  body.menu-open .hamburger-menu {
+    display: block; /* Keep visible even when menu is open */
+  }
+
 }
 
 /* Skjuler hamburger på desktop */
 @media (min-width: 1081px) {
   .menu-toggle {
-    display: none;
+    display: none !important; 
   }
 }
 
