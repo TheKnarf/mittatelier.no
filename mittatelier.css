@@ -148,6 +148,7 @@ article.om {
 p {
 	padding: 5px; /* lager luft rundt tekst */
 }
+
 #footerwrapper {
     order: 4; /* Bestemmer dette elementets rekkefølge på skjermen */
     width: 100%;
