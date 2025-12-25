@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let held = [false, false, false, false, false];
     let rollsLeft = 3;
     let turn = 0;
-    let diceWereHeldThisTurn = false;
+    let diceRolledCount = 5; // How many dice were rolled in the last throw
     let waitingForNextTurn = false;
     let lastMove = null; // To store the last move for undo
 
@@ -201,60 +201,59 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function mainButtonAction() {
-        // Prevent re-rolling while animation is in progress
-        if (rollButton.disabled && rollButton.textContent !== 'Neste tur') return;
-
         const isNewTurn = waitingForNextTurn;
-
+    
         if (isNewTurn) {
-            // Reset turn state
+            diceRolledCount = 5;
+        } else {
+            diceRolledCount = held.filter(h => !h).length;
+        }
+    
+        if (rollButton.disabled && rollButton.textContent !== 'Neste tur') return;
+    
+        if (isNewTurn) {
             waitingForNextTurn = false;
             rollsLeft = 3;
             held = [false, false, false, false, false];
-            diceWereHeldThisTurn = false;
             undoButton.disabled = true;
             lastMove = null;
         }
-
+    
         if (rollsLeft > 0) {
             rollButton.disabled = true;
-
-            // Animate all dice on a new turn, otherwise just the un-held ones
+    
             const diceElements = diceContainer.querySelectorAll('.dice');
             diceElements.forEach((die, index) => {
                 if (isNewTurn || !held[index]) {
                     die.classList.add('rolling');
                 }
             });
-
+    
             setTimeout(() => {
                 rollsLeft--;
                 dice = dice.map((d, i) => (isNewTurn || !held[i]) ? Math.floor(Math.random() * 6) + 1 : d);
                 
-                renderDice(); // This removes the 'rolling' class by re-rendering
-
+                renderDice();
+    
                 rollButton.textContent = `Kast terningene (${rollsLeft} igjen)`;
                 
-                // Only re-enable the button if there are rolls left
                 if (rollsLeft > 0) {
                     rollButton.disabled = false;
                 }
-            }, 500); // Animation duration in ms
+            }, 500);
         }
     }
 
     function toggleHold(index) {
-        if (rollsLeft < 3) { // Can't hold before first roll
-            diceWereHeldThisTurn = true;
+        if (rollsLeft < 3) {
             held[index] = !held[index];
             renderDice();
         }
     }
 
     function scoreTurn(category, column) {
-        if (waitingForNextTurn) return; // Don't allow scoring between turns
+        if (waitingForNextTurn) return;
 
-        // Rule for Column 4 (sequential)
         if (column === 3) {
             const categoryIndex = orderedCategories.indexOf(category);
             if (categoryIndex > 0) {
@@ -266,7 +265,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Rule for Column 5 (reverse sequential)
         if (column === 4) {
             const categoryIndex = orderedCategories.indexOf(category);
             if (categoryIndex < orderedCategories.length - 1) {
@@ -280,21 +278,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (scoreCategories[category].scores[column] === null && rollsLeft < 3) {
             let score;
-            // Rule for Column 6
-            if (column === 5 && diceWereHeldThisTurn) {
+            if (column === 5 && diceRolledCount < 5) {
                 score = 0;
             } else {
                 score = scoreCategories[category].calc(dice);
             }
 
-            // Confirmation for striking in column 6
             if (column === 5 && score === 0) {
                 if (!confirm(`Er du sikker på at du vil stryke i kolonne 6?`)) {
-                    return; // Do nothing if user cancels
+                    return;
                 }
             }
 
-            // Store state for undo
             lastMove = {
                 category,
                 column,
@@ -302,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 held: [...held],
                 rollsLeft,
                 turn,
-                diceWereHeldThisTurn
+                diceRolledCount
             };
             
             scoreCategories[category].scores[column] = score;
@@ -318,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 rollButton.textContent = 'Neste tur';
                 rollButton.disabled = false;
-                undoButton.disabled = false; // Enable undo button
+                undoButton.disabled = false;
             }
         }
     }
@@ -326,29 +321,24 @@ document.addEventListener('DOMContentLoaded', () => {
     function undoLastMove() {
         if (!lastMove) return;
 
-        const { category, column, dice: lastDice, held: lastHeld, rollsLeft: lastRollsLeft, turn: lastTurn, diceWereHeldThisTurn: lastDiceWereHeld } = lastMove;
+        const { category, column, dice: lastDice, held: lastHeld, rollsLeft: lastRollsLeft, turn: lastTurn, diceRolledCount: lastDiceRolledCount } = lastMove;
 
-        // Revert score
         scoreCategories[category].scores[column] = null;
 
-        // Revert game state
         dice = [...lastDice];
         held = [...lastHeld];
         rollsLeft = lastRollsLeft;
         turn = lastTurn;
-        diceWereHeldThisTurn = lastDiceWereHeld;
+        diceRolledCount = lastDiceRolledCount;
         waitingForNextTurn = false;
 
-        // Update UI
         renderScoreboard();
         renderDice();
 
-        // Reset buttons
         rollButton.textContent = `Kast terningene (${rollsLeft} igjen)`;
         rollButton.disabled = rollsLeft === 0;
         undoButton.disabled = true;
 
-        // Clear last move
         lastMove = null;
     }
 
