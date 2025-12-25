@@ -268,6 +268,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (scoreCategories[category].scores[column] === null && rollsLeft < 3) {
+            let score;
+            // Rule for Column 6
+            if (column === 5 && diceWereHeldThisTurn) {
+                score = 0;
+            } else {
+                score = scoreCategories[category].calc(dice);
+            }
+
+            // Confirmation for striking in column 6
+            if (column === 5 && score === 0) {
+                if (!confirm(`Er du sikker på at du vil stryke i kolonne 6?`)) {
+                    return; // Do nothing if user cancels
+                }
+            }
+
             // Store state for undo
             lastMove = {
                 category,
@@ -278,14 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 turn,
                 diceWereHeldThisTurn
             };
-
-            let score;
-            // Rule for Column 6
-            if (column === 5 && diceWereHeldThisTurn) {
-                score = 0;
-            } else {
-                score = scoreCategories[category].calc(dice);
-            }
+            
             scoreCategories[category].scores[column] = score;
             
             waitingForNextTurn = true;
