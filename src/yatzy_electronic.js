@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let score;
             // Rule for Column 6
-            if (column === 5 && held.some(h => h)) {
+            if (column === 5 && diceWereHeldThisTurn) {
                 score = 0;
             } else {
                 score = scoreCategories[category].calc(dice);
