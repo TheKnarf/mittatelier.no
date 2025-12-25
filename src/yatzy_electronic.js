@@ -201,34 +201,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function mainButtonAction() {
-        if (waitingForNextTurn) {
-            // Start new turn and perform first roll
+        // Prevent re-rolling while animation is in progress
+        if (rollButton.disabled && rollButton.textContent !== 'Neste tur') return;
+
+        const isNewTurn = waitingForNextTurn;
+
+        if (isNewTurn) {
+            // Reset turn state
             waitingForNextTurn = false;
             rollsLeft = 3;
             held = [false, false, false, false, false];
             diceWereHeldThisTurn = false;
-            
-            // Perform roll
-            rollsLeft--;
-            dice = dice.map(() => Math.floor(Math.random() * 6) + 1);
-            renderDice();
-            rollButton.textContent = `Kast terningene (${rollsLeft} igjen)`;
-            
-            // Disable undo button and clear last move
             undoButton.disabled = true;
             lastMove = null;
+        }
 
-        } else {
-            // Perform a subsequent roll
-            if (rollsLeft > 0) {
-                rollsLeft--;
-                dice = dice.map((d, i) => held[i] ? d : Math.floor(Math.random() * 6) + 1);
-                renderDice();
-                rollButton.textContent = `Kast terningene (${rollsLeft} igjen)`;
-                if (rollsLeft === 0) {
-                    rollButton.disabled = true;
+        if (rollsLeft > 0) {
+            rollButton.disabled = true;
+
+            // Animate all dice on a new turn, otherwise just the un-held ones
+            const diceElements = diceContainer.querySelectorAll('.dice');
+            diceElements.forEach((die, index) => {
+                if (isNewTurn || !held[index]) {
+                    die.classList.add('rolling');
                 }
-            }
+            });
+
+            setTimeout(() => {
+                rollsLeft--;
+                dice = dice.map((d, i) => (isNewTurn || !held[i]) ? Math.floor(Math.random() * 6) + 1 : d);
+                
+                renderDice(); // This removes the 'rolling' class by re-rendering
+
+                rollButton.textContent = `Kast terningene (${rollsLeft} igjen)`;
+                
+                // Only re-enable the button if there are rolls left
+                if (rollsLeft > 0) {
+                    rollButton.disabled = false;
+                }
+            }, 500); // Animation duration in ms
         }
     }
 
@@ -394,9 +405,12 @@ document.addEventListener('DOMContentLoaded', () => {
         undoButton.disabled = true;
         const finalScore = totalScoreValue.textContent;
         document.getElementById('total-score').style.display = 'block';
-        alert('Spillet er over! Sluttpoengsum: ' + finalScore);
-        saveHighscore(parseInt(finalScore, 10));
-        displayHighscores();
+
+        setTimeout(() => {
+            alert('Spillet er over! Sluttpoengsum: ' + finalScore);
+            saveHighscore(parseInt(finalScore, 10));
+            displayHighscores();
+        }, 0);
     }
 
     function toggleHighscore() {
