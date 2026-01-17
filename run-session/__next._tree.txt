@@ -1,3 +1,0 @@
-:HL["/mittatelier.no/_next/static/chunks/54417806a410a463.css","style"]
-:HL["/mittatelier.no/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"buildId":"4F2yTmgpiwyTxkz1-XGWu","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"run-session","paramType":null,"paramKey":"run-session","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
