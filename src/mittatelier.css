@@ -431,6 +431,10 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
   font-size: 0.95rem;
 }
 
+#privacy-modal ul {
+  padding-left: 2em;
+}
+
 #privacy-modal p,
 #privacy-modal li {
   color: #333;
