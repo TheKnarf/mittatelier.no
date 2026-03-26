@@ -91,8 +91,24 @@ const YatzyGame = (() => {
             if (state.waitingForNextTurn || state.scores[category].scores[column] !== null || state.rollsLeft >= 3) {
                 return { error: 'Invalid move' };
             }
-            if (column === 3) { /* ... sequential rule ... */ }
-            if (column === 4) { /* ... reverse sequential rule ... */ }
+            if (column === 3) {
+                const categoryIndex = ORDERED_CATEGORIES.indexOf(category);
+                if (categoryIndex > 0) {
+                    const previousCategory = ORDERED_CATEGORIES[categoryIndex - 1];
+                    if (state.scores[previousCategory].scores[3] === null) {
+                        return { error: `Kolonne 4 må fylles i rekkefølge. Vennligst score '${previousCategory}' i denne kolonnen først.` };
+                    }
+                }
+            }
+            if (column === 4) {
+                const categoryIndex = ORDERED_CATEGORIES.indexOf(category);
+                if (categoryIndex < ORDERED_CATEGORIES.length - 1) {
+                    const nextCategory = ORDERED_CATEGORIES[categoryIndex + 1];
+                    if (state.scores[nextCategory].scores[4] === null) {
+                        return { error: `Kolonne 5 må fylles i motsatt rekkefølge. Vennligst score '${nextCategory}' i denne kolonnen først.` };
+                    }
+                }
+            }
 
             const score = (column === 5 && state.diceRolledCount < 5) ? 0 : CATEGORY_RULES[category].calc(state.dice);
             
