@@ -291,7 +291,7 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
 
     #navwrapper {
         order: 2; /* Bestemmer dette elementets rekkefølge på mobilskjerm */
-        position: absolute;
+        position: fixed;
         top: 10px;
         left: 10px;
         z-index: 1001;
