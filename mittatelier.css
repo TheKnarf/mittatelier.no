@@ -433,6 +433,8 @@ div.desc { /*beskrivelsen under bilder i galleriet*/
 
 #privacy-modal ul {
   padding-left: 2em;
+  list-style-type: disc;
+  list-style-position: outside;
 }
 
 #privacy-modal p,
