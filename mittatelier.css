@@ -166,6 +166,7 @@ p {
 .kart {
 	/* lager kantlinje rundt kartet */
 	border: solid 1px rgb(70, 42, 17);
+	border-radius: 12px;
 	/* lager skygge */
 	box-shadow: 10px 10px 10px rgb(70, 42, 17);
 	position: relative;
